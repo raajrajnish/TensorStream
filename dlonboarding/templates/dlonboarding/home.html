@@ -1,0 +1,23 @@
+{% extends 'master.html' %}
+
+{% block content %}
+
+<main class="main-content" >
+    <br>
+    <main role="main">
+          <div class="album py-5 bg-light" >
+            <div class="container">
+                <h3 class="text-center section-title mb70" style="color:#ff6f00">Welcome <strong style="color:#000000">{{user}} </strong></h3>
+                <a data-scroll href="{% url 'newblog' %}" class="btn btn-white-outline mr-3" style="color:#ff6f00"><span class="oi oi-plus"></span> New Blog</a>
+                <a data-scroll href="#" class="btn btn-white-outline mr-3" style="color:#ff6f00"><span class="oi oi-plus"></span> New Usecase</a>
+                <a data-scroll href="#" class="btn btn-white-outline mr-3" style="color:#ff6f00"><span class="oi oi-person"></span> Update Profile</a>
+
+
+          </div>
+
+          </div>
+
+    </main>
+
+
+{% endblock %}

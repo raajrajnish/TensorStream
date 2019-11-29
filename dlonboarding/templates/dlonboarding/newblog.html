@@ -1,0 +1,44 @@
+{% extends 'master.html' %}
+
+{% block content %}
+
+<main class="main-content" >
+    <br>
+    <main role="main">
+          <div class="album py-5 bg-light" >
+            <div class="container">
+                <h3 class="text-center section-title mb70" style="color:#ff6f00">New Blog</h3>
+
+                <form method ="POST" action="create" enctype="multipart/form-data">
+                {% csrf_token %}
+                Title :
+                <br/>
+                <input type="text" name="title" />
+                 <br/>
+                Body:
+                <br/>
+                <input type="textbox" name="body" />
+                <br/>
+                Url :
+                <br/>
+                <input type="text" name="url" />
+                 <br/>
+                Icon :
+                <br/>
+                <input type="file" name="icon" />
+                 <br/>
+                image :
+                <br/>
+                <input type="file" name="image" />
+
+                <input class="btn btn-primary" type="submit" value="Add Product"/>
+
+
+
+            </form>
+          </div>
+          </div>
+    </main>
+
+
+{% endblock %}

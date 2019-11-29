@@ -1,0 +1,33 @@
+{% extends 'master.html' %}
+{% block content %}
+
+<main class="main-content">
+
+            <div class="album py-5 bg-light">
+                <div class="container">
+                    <br>
+                    <h3 class="text-center section-title mb70" style="color:#ff6f00">Latest Blogs</h3>
+                  <div class="row">
+
+                    {% for b in blog %}
+                    <div class="card mb-3" style="width: 100%;border-color: #ff6f00;" >
+                      <div class="row no-gutters"  >
+                        <div class="col-md-4" >
+                          <img src="{{b.blog_main_image.url}}" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8" >
+                          <div class="card-body">
+                            <h5 class="card-title" style="color:#ff6f00">{{ b.title }}</h5>
+                            <p class="card-text">{{ b.summary }}</p>
+
+                            <p class="card-text"><H6>Author : {{ b.author }} Create On : {{ b.created_on }}</H6></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                      {% endfor %}
+                  </div>
+                </div>
+            </div>
+        </main>
+{% endblock%}

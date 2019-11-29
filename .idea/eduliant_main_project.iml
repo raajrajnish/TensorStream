@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="jdk" jdkName="Python 3.6" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="JDCV" />
+    <orderEntry type="module" module-name="car_price_prediction" />
+    <orderEntry type="module" module-name="text-summarization-tensorflow" />
+    <orderEntry type="module" module-name="MLand AI" />
+    <orderEntry type="module" module-name="producthunt-project" />
+    <orderEntry type="module" module-name="article_to_summary" />
+    <orderEntry type="module" module-name="Para-Phrase" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
+  </component>
+</module>
