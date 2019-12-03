@@ -5,6 +5,7 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from .models import Blog
 from django.utils import timezone
+from django.template.defaultfilters import slugify
 
 
 # Create your views here.
@@ -45,12 +46,11 @@ def create(request):
             # Fields 3 Blog Summary.
             blog.summary = request.POST['summary']
             # Fields 4 Blog Slug.
-            blog.slug = request.POST['title']
+            blog.slug = slugify(request.POST['title'])
             # Fields 5 Blog Author.
             blog.author = request.user
             # Fields 6 Blog Content
             blog.content = request.POST['content']
-
             blog.save()
             return redirect('/dlblog/' + blog.slug)
 
@@ -60,5 +60,6 @@ def create(request):
         return render(request, 'dlblog/newblog.html')
 
 def blog_home(request,slug):
+    print("blog_home ----")
     blog = get_object_or_404(Blog, slug=slug)
     return render(request,'dlblog/blog_home.html',{'blog': blog})
