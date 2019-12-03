@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 
 # Create your models here.
@@ -13,12 +14,16 @@ STATUS = (
 
 class Blog(models.Model):
     blog_main_image = models.FileField(upload_to='blog/images/')
-    title = models.CharField(max_length=50,unique=True)
+    title = models.CharField(max_length=200,unique=True)
     summary = models.CharField(max_length=80,unique=True)
     slug = models.SlugField(max_length=200,unique=True)
     author = models.ForeignKey(User,on_delete=models.CASCADE,related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
+
+    content = RichTextField()
+
+
+
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS,default=0)
 

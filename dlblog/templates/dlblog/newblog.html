@@ -1,0 +1,38 @@
+{% extends 'master.html' %}
+
+{% block content %}
+
+<main class="main-content" >
+    <br>
+    <main role="main">
+          <div class="album py-5 bg-light" >
+            <div class="container">
+                <h3 class="text-center section-title mb70" style="color:#ff6f00">New Blog</h3>
+
+              <form method ="POST" action="create" enctype="multipart/form-data">
+                    {% csrf_token %}
+                                  Main Blog Image :
+                                  <input type="file" name="blog_main_image" />
+                    <br/>
+                                  Title :
+                    <input type="text" name="title" />
+                     <br/>
+
+                   Summary :
+                    <input type="text" name="summary" />
+                     <br/>
+                                  Body:
+                    <br/>
+                  {% load static %}
+                    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+                    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+                                        <input type="textbox" name="content" />
+                    <br/>
+                    <input class="btn btn-primary" type="submit" value="Create Blog"/>
+                </form>
+          </div>
+          </div>
+    </main>
+
+
+{% endblock %}

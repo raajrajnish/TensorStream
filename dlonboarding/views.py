@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
-
+from django.contrib.auth.decorators import login_required
 
 
 def logout(request):
@@ -28,9 +28,6 @@ def signup(request):
     else:
         return render(request, 'dlonboarding/signup.html')
 
-
+@login_required
 def userhome(request):
     return render(request,'dlonboarding/home.html')
-
-def newblog(request):
-    return render(request,'dlonboarding/newblog.html')

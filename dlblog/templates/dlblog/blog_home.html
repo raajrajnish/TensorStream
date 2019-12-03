@@ -1,33 +1,37 @@
 {% extends 'master.html' %}
 {% block content %}
 
-<main class="main-content">
+          <main class="main-content">
+                      <div class="album py-5 bg-light">
+                            {% load static %}
+                              <header style="background-image: url('{{blog.blog_main_image.url}}')" >
+                                <div class="overlay"></div>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-lg-8 col-md-10 mx-auto">
+                                      <div class="post-heading">
+                                        <br>
+                                        <h1 style="color:#fff">{{blog.title}}</h1>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </header>
+                        <article>
+                          <div class="row">
+                            <div class="col-lg-8 col-md-10 mx-auto">
+                              <br>
+                              <span class="meta">Posted by {{ blog.author }} on {{ blog.created_on}}</span>
+                              <br><br>
+                              {{ blog.content }}
+                            </div>
+                          </div>
+                        </article>
 
-            <div class="album py-5 bg-light">
-                <div class="container">
-
-                  <div class="row">
-                      {% load staticfiles %}
-                      <img src="{% static 'images/blog1.jpeg' %}" style="max-width: 100%;max-height:100%;"/>
-                      <div class="card-body">
-                                <br>
-                            <h3 class="text-center section-title mb70" style="color:#ff6f00">What is Deep Learning?</h3>
-                                  <h6>Hello How are You</h6>
-
-                          <pre class="brush: python" >
-                              #!/usr/bin/env python
-                              import os
-                              import sys
-
-                            </pre>
-
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                       </div>
-                    </div>
-                  </div>
-                </div>
+            </div>
 
-        </main>
+          </main>
 
 
 

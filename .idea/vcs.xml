@@ -5,6 +5,7 @@
     <mapping directory="$PROJECT_DIR$/../Para-Phrase" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../article_to_summary" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/django-markdown2" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../producthunt-project" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../text-summarization-tensorflow" vcs="Git" />
   </component>
