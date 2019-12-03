@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
-
+from django.urls import reverse
 
 # Create your models here.
 
@@ -22,8 +22,6 @@ class Blog(models.Model):
 
     content = RichTextField()
 
-
-
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS,default=0)
 
@@ -35,6 +33,9 @@ class Blog(models.Model):
     # Django will use it in many places, such as the administration site.
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog_home', kwargs={'slug': self.slug})
 
 
 class UseCase(models.Model):

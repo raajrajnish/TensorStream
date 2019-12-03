@@ -23,7 +23,7 @@
                               <br>
                               <span class="meta">Posted by {{ blog.author }} on {{ blog.created_on}}</span>
                               <br><br>
-                              {{ blog.content }}
+                              <p>{{ blog.content | safe }}</p>
                             </div>
                           </div>
                         </article>

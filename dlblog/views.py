@@ -52,13 +52,13 @@ def create(request):
             blog.content = request.POST['content']
 
             blog.save()
-            return redirect('/dlblog/' + str(blog.id))
+            return redirect('/dlblog/' + blog.slug)
 
         else:
             return render(request, 'dlblog/newblog.html', {'error': 'Please enter all details'})
     else:
         return render(request, 'dlblog/newblog.html')
 
-def blog_home(request,blog_id):
-    blog = get_object_or_404(Blog, pk=blog_id)
+def blog_home(request,slug):
+    blog = get_object_or_404(Blog, slug=slug)
     return render(request,'dlblog/blog_home.html',{'blog': blog})

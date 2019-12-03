@@ -9,11 +9,14 @@
                     <h3 class="text-center section-title mb70" style="color:#ff6f00">Latest Blogs</h3>
                   <div class="row">
 
+
+
                     {% for b in blog %}
+
                     <div class="card mb-3" style="width: 100%;border-color: #ff6f00;" >
                       <div class="row no-gutters"  >
                         <div class="col-md-4" >
-                          <a href="{}" ><img src="{{b.blog_main_image.url}}" class="card-img" alt="..."></a>
+                          <a href="{{ b }}" ><img src="{{b.blog_main_image.url}}" class="card-img" alt="..."></a>
                         </div>
                         <div class="col-md-8" >
                           <div class="card-body">
