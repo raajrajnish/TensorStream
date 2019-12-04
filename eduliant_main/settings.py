@@ -98,8 +98,8 @@ DATABASES = {
                 'default': {
                     'ENGINE': 'django.db.backends.postgresql',
                     'NAME': 'deeplearningdb',
-                    'USER': 'postgres',
-                    'PASSWORD':'niitR1234',
+                    'USER': 'deeplearning',
+                    'PASSWORD':'lr201203m',
                     'HOST':'localhost',
                     'PORT':'5432'
                 }
@@ -159,3 +159,9 @@ SOCIAL_AUTH_GITHUB_SECRET = '7157ce6003da6966529ab264c80fba1049057206'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '433891340635179'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'f98db568b445a3a09cd1c09bc32c97c2'
+
+
+try:
+    from local_settings import *
+except:
+    ImportError
