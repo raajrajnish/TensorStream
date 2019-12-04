@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'social_django',
+
 ]
 
 MIDDLEWARE = [
@@ -51,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'eduliant_main.urls'
@@ -66,10 +69,24 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+
 
 WSGI_APPLICATION = 'eduliant_main.wsgi.application'
 
@@ -78,11 +95,15 @@ WSGI_APPLICATION = 'eduliant_main.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+                'default': {
+                    'ENGINE': 'django.db.backends.postgresql',
+                    'NAME': 'deeplearningdb',
+                    'USER': 'postgres',
+                    'PASSWORD':'niitR1234',
+                    'HOST':'localhost',
+                    'PORT':'5432'
+                }
+            }
 
 
 # Password validation
@@ -130,3 +151,11 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = 'home'
+SOCIAL_AUTH_GITHUB_KEY = '1ae7673b65e953bd7ab7'
+SOCIAL_AUTH_GITHUB_SECRET = '7157ce6003da6966529ab264c80fba1049057206'
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = '433891340635179'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'f98db568b445a3a09cd1c09bc32c97c2'

@@ -23,14 +23,18 @@
                     </div>
 
                     <div class="col-lg-5 ml-auto">
-                        <H5 class="text-white-gray">Share your work with Data Science Community</H5>
-                        <h3 class="mb20 text-gray" style="color:#fff">Earn INR 299* or 99* Per Share</h3>
+                        <h4 class="text-white">Share your work with Community</h4>
+                        <!--<h3 class="mb20 text-gray" style="color:#fff">Earn INR 299* or 99* Per Share</h3>-->
                             <h4 class="text-white">{% if error %} {{ error }} {% endif %}</h4>
                             <form id="form-id" method ="POST" action="{% url 'login' %}">
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="col-md-12 mb20">
-                                        <p class="text-white-gray">Please login to avail offer</p>
+                                        <h4 style="color:#fff;display:inline;">Login Using</h4>
+                                        <h4 style="color:#fff;display:inline;"><a href="{% url 'social:begin' 'facebook' %}" style="color:#ffffff"><i class="fab fa-facebook"> facebook</i></a></h4>
+                                        <h4  style="color:#fff;display:inline;"><a href="{% url 'social:begin' 'github' %}" style="color:#ffffff"><i class="fab fa-github"></i> github</a></h4>
+                                        <hr style="border-color:#fff">
+
                                         <input type="text" name="username" class="form-control" placeholder="Enter Username" required="">
                                     </div>
                                     <div class="col-md-12 mb20">
@@ -40,7 +44,9 @@
                                         <!--<input class="btn btn-outline-default" style="border-color: #fff;" type="submit" value="Login"/>-->
                                         <a data-scroll href="#" class="btn btn-white-outline mr-3" onclick="document.forms['form-id'].submit();">Login </a>
                                         <a data-scroll href="{% url 'signup' %}" class="btn btn-white-outline mr-3">Sign Up</a>
+
                                     </div>
+
                                 </div>
                             </form>
 
@@ -61,11 +67,12 @@
 
                 <div class="col-md-4" >
                   <div class="card mb-4 shadow-sm" >
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{b.blog_main_image.url}}" ></img>
-                    <div class="card-body" style="border-color: #ff6f00">
-                        <h4>{{ b.title }}</h4>
+                    <a href="dlblog/{{ b.slug }}" ><img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{b.blog_main_image.url}}" >
+                    </img></a>
+                    <div class="card-body" >
+                        <a href="dlblog/{{ b.slug }}"><h4 style="color: #ff6f00">{{ b.title }}</h4></a>
                     </div>
-                      <a href="dlblog/{{ b.slug }}" class="btn" style="color:#ff6f00">Read More</a>
+                      <!--<a href="dlblog/{{ b.slug }}" class="btn" style="color:#ff6f00">Read More</a>-->
                   </div>
                 </div>
                   {% endfor %}
@@ -98,6 +105,7 @@
 
 
     </main>
+
 </main>
 
 

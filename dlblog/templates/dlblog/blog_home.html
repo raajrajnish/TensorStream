@@ -4,6 +4,8 @@
           <main class="main-content">
                       <div class="album py-5 bg-light">
                             {% load static %}
+                        <div class="container">
+                          <br>
                               <header style="background-image: url('{{blog.blog_main_image.url}}')" >
                                 <div class="overlay"></div>
                                 <div class="container">
@@ -12,24 +14,30 @@
                                       <div class="post-heading">
                                         <br>
                                         <h1 style="color:#fff">{{blog.title}}</h1>
+                                          <br>
+                                          <h3 style="color:#fff">{{blog.summary}}</h3>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </header>
+                          </div>
+
                         <article>
                           <div class="row">
                             <div class="col-lg-8 col-md-10 mx-auto">
                               <br>
-                              <span class="meta">Posted by {{ blog.author }} on {{ blog.created_on}}</span>
-                              <br><br>
-                              <p>{{ blog.content | safe }}</p>
+                                <h5 class="meta" style="color: #ff6f00">Posted by <strong style="color: #000000">{{ blog.author }}</strong>
+                                    on <strong style="color: #000000">{{ blog.created_on}}</strong> you can connect with author at </h5>
+                                {{form.media}}
+                              {{ blog.content|safe }}
                             </div>
                           </div>
                         </article>
 
                       </div>
             </div>
+
 
           </main>
 
