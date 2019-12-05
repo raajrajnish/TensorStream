@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'ckeditor_uploader',
     'social_django',
 
 ]
@@ -85,6 +86,8 @@ AUTHENTICATION_BACKENDS = (
 
     'django.contrib.auth.backends.ModelBackend',
 )
+
+
 
 
 
@@ -153,6 +156,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'home'
+
 SOCIAL_AUTH_GITHUB_KEY = '1ae7673b65e953bd7ab7'
 SOCIAL_AUTH_GITHUB_SECRET = '7157ce6003da6966529ab264c80fba1049057206'
 
@@ -160,8 +164,10 @@ SOCIAL_AUTH_GITHUB_SECRET = '7157ce6003da6966529ab264c80fba1049057206'
 SOCIAL_AUTH_FACEBOOK_KEY = '433891340635179'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'f98db568b445a3a09cd1c09bc32c97c2'
 
+CKEDITOR_UPLOAD_PATH = "blog/images"
+
 
 try:
-    from local_settings import *
+    from .local_settings import *
 except:
     ImportError

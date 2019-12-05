@@ -14,12 +14,6 @@ Assan Multipurpose landing template stylesheet
 Basic of template
 */
 
- #about_me1 hr, #about_me1 h3{
-    	display: inline-block;
-        vertical-align: middle;
-    }
-
-
 html, body, .fullScreen {
   height: 100%; }
 

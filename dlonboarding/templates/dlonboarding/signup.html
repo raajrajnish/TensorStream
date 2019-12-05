@@ -9,26 +9,57 @@
 <br />
 {% endif%}
 
-<H1>Sign UP!</H1>
+ <main class="main-content">
+                <div class="row pb30 align-items-end">
+                    <div class="col-lg-4 ml-md-auto col-md-6 col-sm-6 mb20">
+                        <h3 class="text-black text-left mb30" style="color:#ff6f00"><strong style="color:#000000">Great Choice</strong> Welcome Onboard!</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="text1" class="form-control" placeholder="enter name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text2" class="form-control" placeholder="enter unique username">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="enter email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password1" class="form-control" placeholder="enter password">
+                            </div>
+                            <div class="form-group">
+                                <input type="password2" class="form-control" placeholder="confirm password">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-rounded btn-primary btn-block">Sign Up</button>
+                            </div>
+                            <div class="text-center text-black-gray">Or</div>
+                            <hr>
+                            <div>
+                                <button type="submit" class="btn btn-rounded btn-primary btn-block">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb20">
+                        <h3 class="text-black text-left mb30">Or Use Social Account</h3>
+                        <div class="clearfix">
+                            <a href="#" class="social-icon-lg si-dark si-colored-facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon-lg si-dark si-colored-twiter">
+                                <i class="fab fa-github"></i>
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-icon-lg si-dark si-colored-linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+</main>
 
-<form method ="POST" action="signup">
-    {% csrf_token %}
-
-    Username :
-    <br/>
-    <input type="text" name="username" />
-     <br/>
-    Password :
-    <br/>
-    <input type="password" name="password1" />
-    <br/>
-    Confirm Password :
-    <br/>
-    <input type="password" name="password2" />
-<br/><br/>
-    <input class="btn btn-primary" type="submit" value="Signu UP!"/>
 
 
 
-</form>
 {% endblock %}

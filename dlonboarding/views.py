@@ -21,7 +21,7 @@ def signup(request):
 
             except User.DoesNotExist:
                 user = User.objects.create_user(request.POST['username'], password=request.POST['password1'])
-                auth.login(request, user)
+                auth.login(request, user,backend='django.contrib.auth.backends.ModelBackend')
                 return redirect('home')
         else:
             return render(request, 'dlonboarding/signup.html', {'error': 'Password should match'})

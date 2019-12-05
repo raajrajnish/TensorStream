@@ -1,0 +1,18 @@
+server {
+    listen 80;
+    server_name 142.93.214.102;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/rajnishdeploy/deeplearning;
+    }
+
+    location /media/blog/images/ {
+        root /home/rajnishdeploy/deeplearning;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/rajnishdeploy/deeplearning/eduliant_main.sock;
+    }
+}
