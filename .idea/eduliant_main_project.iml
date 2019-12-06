@@ -11,6 +11,7 @@
     <orderEntry type="module" module-name="producthunt-project" />
     <orderEntry type="module" module-name="article_to_summary" />
     <orderEntry type="module" module-name="Para-Phrase" />
+    <orderEntry type="module" module-name="Youtube" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

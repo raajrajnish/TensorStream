@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Blog
 from django.utils import timezone
 from django.template.defaultfilters import slugify
+from .forms import addMainContent
 
 
 # Create your views here.
@@ -22,22 +23,29 @@ def login(request):
     if request.method == 'POST':
         user = auth.authenticate(username=request.POST['username'],password=request.POST['password'])
 
+        # if user is present
         if user is not None:
+            # do the login
             auth.login(request,user)
-            return render(request,'dlonboarding/home.html',{'error':'Username or Password is Incorrect!'})
+            # if user is present and enters valid credentials
+            return render(request,'dlonboarding/home.html',{'user':user})
         else:
-            return render(request,'dlblog/home.html',{'user':user})
+            return render(request,'dlblog/home.html',{'error':"Please enter valid Credentials!"})
     else:
-        return render(request, 'dlblog/home.html')
+        return render(request, 'dlblog/home.html',{'error':"Please enter valid Credentials!"})
 
 @login_required
 def newblog(request):
     return render(request,'dlblog/newblog.html')
 
+'''
+
+
 @login_required
 def create(request):
     if request.method == 'POST':
         if request.FILES['blog_main_image'] and request.POST['title'] and request.POST['summary'] and request.POST['content']:
+
             blog = Blog()
             # Fields 1 Blog Image.
             blog.blog_main_image = request.FILES['blog_main_image']
@@ -59,7 +67,31 @@ def create(request):
     else:
         return render(request, 'dlblog/newblog.html')
 
+
+'''
+
+@login_required
+def create(request):
+    if request.method == "POST":
+        form = addMainContent(request.POST,request.FILES)
+        print("Form is : ",form)
+
+        if form.is_valid():
+            obj = form.save(request.user)
+
+            return redirect('home')
+    else:
+        form = addMainContent()
+
+    return render(request, 'dlblog/newblog.html',{'form':form})
+
+
+
+
+
 def blog_home(request,slug):
     print("blog_home ----")
     blog = get_object_or_404(Blog, slug=slug)
     return render(request,'dlblog/blog_home.html',{'blog': blog})
+
+

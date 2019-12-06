@@ -8,4 +8,5 @@ urlpatterns = [
     path('<slug:slug>/',views.blog_home,name='blog_home'),
     path('blogs',views.blogs,name='blogs'),
     path('newblog',views.newblog,name='newblog'),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]

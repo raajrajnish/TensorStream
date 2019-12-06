@@ -23,14 +23,16 @@
                     </div>
 
                     <div class="col-lg-5 ml-auto">
+                        <h6 >{% if error %} <strong style="color:#fff;">{{ error }}</strong> {% endif %}</h6>
                         <h4 class="text-white">Share your work with Community</h4>
                         <!--<h3 class="mb20 text-gray" style="color:#fff">Earn INR 299* or 99* Per Share</h3>-->
-                            <h4 class="text-white">{% if error %} {{ error }} {% endif %}</h4>
+
                             <form id="form-id" method ="POST" action="{% url 'login' %}">
                                 {% csrf_token %}
                                 <div class="row">
+
                                     <div class="col-md-12 mb20">
-                                        <h4 style="color:#fff;display:inline;">Login Using</h4>
+                                        <h4 style="color:#fff;display:inline;">join us via</h4>
                                         <h4 style="color:#fff;display:inline;"><a href="{% url 'social:begin' 'facebook' %}" style="color:#ffffff"><i class="fab fa-facebook"> facebook</i></a></h4>
                                         <h4  style="color:#fff;display:inline;"><a href="{% url 'social:begin' 'github' %}" style="color:#ffffff"><i class="fab fa-github"></i> github</a></h4>
                                         <hr style="border-color:#fff">

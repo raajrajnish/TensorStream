@@ -16,7 +16,7 @@
         <link href="/static/css/css_cards.css" rel="stylesheet">
         <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
          <link href="{% static 'fontawesome/css/all.css' %}" rel="stylesheet">
-        <script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script>
+        <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
 
         <!-- Custom styles for this template -->
         <link href="css/clean-blog.min.css" rel="stylesheet">
@@ -26,6 +26,27 @@
         SyntaxHighlighter.config.clipboardSwf = 'http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf';
         SyntaxHighlighter.all();
         </script>
+
+        <!--
+        <script type="text/javascript">
+
+            function stopRKey(evt) {
+              var evt = (evt) ? evt : ((event) ? event : null);
+              var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+              if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
+            }
+
+            document.onkeypress = stopRKey;
+
+            </script>
+            -->
+
+         <script type="text/javascript">
+     function Expand(obj){
+      if (!obj.savesize) obj.savesize=obj.size;
+      obj.size=Math.max(obj.savesize,obj.value.length);
+     }
+  </script>
 
     </head>
 

@@ -2,42 +2,45 @@
 
 {% block content %}
 
-{% if error%}
-
-{{error}}
-<br />
-<br />
-{% endif%}
 
  <main class="main-content">
                 <div class="row pb30 align-items-end">
                     <div class="col-lg-4 ml-md-auto col-md-6 col-sm-6 mb20">
-                        <h3 class="text-black text-left mb30" style="color:#ff6f00"><strong style="color:#000000">Great Choice</strong> Welcome Onboard!</h3>
-                        <form>
+                        <br><br>
+                        {% if error%} <h6>{{error}}</h6> {% endif%}
+                        <h3 class="text-black text-left mb30" style="color:#ff6f00"><strong style="color:#000000">Great Choice</strong>
+                            Welcome Onboard! </h3>
+
+
+
+                        <form method ="POST" action="signup" enctype="multipart/form-data">
+                             {% csrf_token %}
                             <div class="form-group">
-                                <input type="text1" class="form-control" placeholder="enter name">
+                                <input type="text1" class="form-control" name="name" placeholder="Your Goodname">
                             </div>
                             <div class="form-group">
-                                <input type="text2" class="form-control" placeholder="enter unique username">
+                                <input type="text2" class="form-control"  name="username" placeholder="Your Username (make sure it's unique!)">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="enter email">
+                                <input type="email" class="form-control"  name="email" placeholder="Your Email">
                             </div>
                             <div class="form-group">
-                                <input type="password1" class="form-control" placeholder="enter password">
+                                <input type="password1" class="form-control"  name="password1" placeholder="Your Password">
                             </div>
                             <div class="form-group">
-                                <input type="password2" class="form-control" placeholder="confirm password">
+                                <input type="password2" class="form-control"  name="password2" placeholder="Confirm Password">
                             </div>
                             <div class="form-group">
+                                <br>
                                 <button type="submit" class="btn btn-rounded btn-primary btn-block">Sign Up</button>
                             </div>
-                            <div class="text-center text-black-gray">Or</div>
+                        </form>
+                         <div class="text-center text-black-gray">Or</div>
                             <hr>
                             <div>
-                                <button type="submit" class="btn btn-rounded btn-primary btn-block">Sign In</button>
+                                <a href="{% url 'home' %}"><button type="submit" class="btn btn-rounded btn-primary btn-block">Sign In</button></a>
+
                             </div>
-                        </form>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6 mb20">
                         <h3 class="text-black text-left mb30">Or Use Social Account</h3>

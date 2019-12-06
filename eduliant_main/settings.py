@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'social_django',
+    'crispy_forms',
 
 ]
 
@@ -164,7 +165,9 @@ SOCIAL_AUTH_GITHUB_SECRET = '7157ce6003da6966529ab264c80fba1049057206'
 SOCIAL_AUTH_FACEBOOK_KEY = '433891340635179'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'f98db568b445a3a09cd1c09bc32c97c2'
 
-CKEDITOR_UPLOAD_PATH = "blog/images"
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 
 try:

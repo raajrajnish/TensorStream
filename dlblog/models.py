@@ -13,6 +13,7 @@ STATUS = (
 )
 
 
+
 class Blog(models.Model):
     blog_main_image = models.FileField(upload_to='blog/images/')
     title = models.CharField(max_length=200,unique=True)
