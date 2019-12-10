@@ -16,12 +16,15 @@
                     <div class="card mb-3" style="width: 100%;border-color: #ff6f00;" >
                       <div class="row no-gutters"  >
                         <div class="col-md-4" >
-                          <a href="{{ b.slug }}" ><img src="{{b.blog_main_image.url}}" class="card-img" alt="..."></a>
+                            <div class="inner">
+                            <a href="{{ b.slug }}" ><img src="{{b.blog_main_image.url}}" class="card-img" alt="..."></a>
+                            </div>
+
                         </div>
                         <div class="col-md-8" >
                           <div class="card-body">
-                            <h5 class="card-title" style="color:#ff6f00">{{ b.title }}</h5>
-                            <p class="card-text">{{ b.summary }}</p>
+                            <h3 class="card-title" style="color:#ff6f00">{{ b.title }}</h3>
+                            <h5 class="card-text">{{ b.summary | safe}}</h5>
                             <p class="card-text"><H6>Author : {{ b.author }} Create On : {{ b.created_on }}</H6></p>
                           </div>
                         </div>

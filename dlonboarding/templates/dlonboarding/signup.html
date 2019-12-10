@@ -9,26 +9,26 @@
                         <br><br>
                         {% if error%} <h6>{{error}}</h6> {% endif%}
                         <h3 class="text-black text-left mb30" style="color:#ff6f00"><strong style="color:#000000">Great Choice</strong>
-                            Welcome Onboard! </h3>
+                            Welcome! </h3>
 
 
 
                         <form method ="POST" action="signup" enctype="multipart/form-data">
                              {% csrf_token %}
                             <div class="form-group">
-                                <input type="text1" class="form-control" name="name" placeholder="Your Goodname">
+                                <input type="text1" class="form-control" name="name" placeholder="Your Goodname" required="">
                             </div>
                             <div class="form-group">
-                                <input type="text2" class="form-control"  name="username" placeholder="Your Username (make sure it's unique!)">
+                                <input type="text2" class="form-control"  name="username" placeholder="Your Username (make sure it's unique!)" required="">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control"  name="email" placeholder="Your Email">
+                                <input type="email" class="form-control"  name="email" placeholder="Your Email" required="">
                             </div>
                             <div class="form-group">
-                                <input type="password1" class="form-control"  name="password1" placeholder="Your Password">
+                                <input type="password" class="form-control"  name="password1" placeholder="Your Password" required="">
                             </div>
                             <div class="form-group">
-                                <input type="password2" class="form-control"  name="password2" placeholder="Confirm Password">
+                                <input type="password" class="form-control"  name="password2" placeholder="Confirm Password" required="">
                             </div>
                             <div class="form-group">
                                 <br>

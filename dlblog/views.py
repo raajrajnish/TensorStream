@@ -23,6 +23,7 @@ def login(request):
     if request.method == 'POST':
         user = auth.authenticate(username=request.POST['username'],password=request.POST['password'])
 
+
         # if user is present
         if user is not None:
             # do the login
@@ -77,8 +78,10 @@ def create(request):
         print("Form is : ",form)
 
         if form.is_valid():
-            obj = form.save(request.user)
-
+            instance = form.save(commit=False)
+            instance.author =  request.user
+            instance.slug = slugify(request.POST['title'])
+            instance.save()
             return redirect('home')
     else:
         form = addMainContent()

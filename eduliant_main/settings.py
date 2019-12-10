@@ -19,8 +19,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
+config = {}
+with open('./etc/secret_key.txt') as sk:
+    for line in sk:
+        key, value = line.partition("=")[::2]
+        config[key.strip()] = value
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'llz_%+yi(91_91_nw3^dfusn8q9mno3v4fa*#!g#+w30pa^cz8'
+
+SECRET_KEY = config["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -165,9 +172,8 @@ SOCIAL_AUTH_GITHUB_SECRET = '7157ce6003da6966529ab264c80fba1049057206'
 SOCIAL_AUTH_FACEBOOK_KEY = '433891340635179'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'f98db568b445a3a09cd1c09bc32c97c2'
 
-CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_UPLOAD_PATH = "blog/uploads/"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 
 
 try:

@@ -23,7 +23,7 @@ body {
   color: #000000;
   line-height: 1.8;
   letter-spacing: 0em;
-  font-family: "Times New Roman";
+  font-family: "Google Sans";
   overflow-x: hidden; }
 
 @media (min-width: 1200px) {
@@ -31,7 +31,7 @@ body {
     width: 1070px; } }
 
 button, input, optgroup, select, textarea {
-  font-family: "Lato", sans-serif; }
+  font-family: "Google Sans", sans-serif; }
 
 button:focus {
   outline: 0 !important; }
@@ -50,7 +50,7 @@ a {
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
-  font-family: "Dosis", sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-weight: 500;
   line-height: 1.3;
   color: #00363d;
@@ -104,11 +104,11 @@ ul, ol {
   margin: 0 0 1.5em 0; }
 
 .font-base-400 {
-  font-family: "Lato", sans-serif !important;
+  font-family: "Google Sans", sans-serif !important;
   font-weight: 400 !important; }
 
 .font-base {
-  font-family: "Lato", sans-serif !important; }
+  font-family: "Google Sans", sans-serif !important; }
 
 .font300 {
   font-weight: 300 !important; }
@@ -1054,7 +1054,7 @@ Header style
 
 .navbar .navbar-nav .nav-link {
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 300;
   font-size: .8rem;
   letter-spacing: 1px;
   font-family: "Lato", sans-serif;
@@ -1089,8 +1089,8 @@ Header style
       padding-left: 0;
       padding-right: 0; }
   .navbar-right .nav-item .nav-link {
-    border-left: 1px solid #eee;
-    padding-left: 1rem !important; }
+    border-left: 0px solid #eee;
+    padding-left: 0rem !important; }
     .navbar-right .nav-item .nav-link.btn {
       padding-top: 12px !important;
       padding-bottom: 12px !important;
