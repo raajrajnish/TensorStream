@@ -29,11 +29,17 @@ def login(request):
             # do the login
             auth.login(request,user)
             # if user is present and enters valid credentials
-            return render(request,'dlonboarding/home.html',{'user':user})
+            blogs = Blog.objects.all()
+            return render(request,'dlonboarding/home.html',{'user':user,'blogs':blogs})
         else:
             return render(request,'dlblog/home.html',{'error':"Please enter valid Credentials!"})
     else:
         return render(request, 'dlblog/home.html',{'error':"Please enter valid Credentials!"})
+
+
+def fetch_blog(request):
+    return render
+
 
 @login_required
 def newblog(request):
@@ -89,12 +95,13 @@ def create(request):
     return render(request, 'dlblog/newblog.html',{'form':form})
 
 
-
-
-
 def blog_home(request,slug):
-    print("blog_home ----")
     blog = get_object_or_404(Blog, slug=slug)
     return render(request,'dlblog/blog_home.html',{'blog': blog})
+
+
+def edit(request):
+    blog = Blog.objects.all()
+    return render(request, 'dlblog/editblog.html', {'blog': blog})
 
 

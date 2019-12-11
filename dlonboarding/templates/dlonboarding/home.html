@@ -12,21 +12,27 @@
                             <div class="row no-margin align-items-center" style="color:#000000">
                                 <div class="col-lg-6 no-padding" >
                                     <div class="resume-header-text">
-                                        <h4 class="h2 mb0" style="color:#ff6f00">
+                                        <h4 class="h4 mb0" style="color:#ff6f00">
                                             Welcome <strong style="color:#000000">{{user}} </strong>
                                         </h4>
-                                        <p class="lead">Senior Front End Developer</p>
+
+
+
+                                        <!--<p class="lead">Senior Front End Developer</p>
                                         <p class="lead">Joined On : </p>
                                         <p class="lead">Contributions : </p>
                                         <p>Email: <a href="mailto:me@at-enfold.com">me@doedomain.com</a><br>
                                             Mobile: <a href="tel:(555) 4167890">(+91) 1234567890</a><br>
-                                        </p>
+                                        </p>-->
                                         <div class="buttons">
-                                            <a href="{% url 'create' %}"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fas fa-pencil-alt"></i> Blog</a>
-                                            <a href="#"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fab fa-cc-discover"></i> Usecase</a>
-                                            <a href="#"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fas fa-user-edit"></i> Profile</a>
+                                            <br>
+                                            <a href="{% url 'create' %}"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fas fa-pencil-alt"></i> Create New Blog</a>
+
+                                            <!--<a href="#"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fab fa-cc-discover"></i> Usecase</a>
+                                            <a href="#"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fas fa-user-edit"></i> Profile</a>-->
                                         </div>
                                         <br>
+                                        <!--
                                          <div class="clearfix mb30 social-buttons">
                                             <a href="#" class="social-icon si-border si-facebook si-border-round text-orange">
                                                 <i class="fab fa-facebook"></i>
@@ -41,6 +47,7 @@
                                                 <i class="fab fa-github"></i>
                                             </a>
                                         </div>
+                                        -->
                                     </div>
                                 </div>
                                 <div class="col-lg-6 no-padding">
@@ -53,29 +60,30 @@
 
                             <div class="container pt60 pb20 bg-faded" id="folio">
                                 <h3 class="center-title text-center mb40 h3"  style="color:#ff6f00">My Blogs</h3>
+
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-6 mb40">
-                                        <a href="#" class="folio-card">
-                                            <img src="{% static 'images/img6.jpg' %}" alt="" class="img-fluid">
-                                            <h4 style="color:#ff6f00">Geotag card design</h4>
-                                        </a>
-                                    </div><!--col-->
+                                {% for b in blogs %}
+                                    <div class="col-md-4" >
+                                      <div class="card mb-4 shadow-sm" >
+                                          <div class="inner">
+                                                <a href="/dlblog/{{ b.slug }}" ><img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{b.blog_main_image.url}}" >
+                                        </img></a>
+                                        </div>
+
+                                        <div class="card-body" >
+                                            <a href="/dlblog/{{ b.slug }}"><h4 style="color: #ff6f00">{{ b.title }}</h4></a>
+                                        </div>
+                                          <a href= "{% url 'edit' %}" class="btn" style="color:#ff6f00">Edit</a>
+                                      </div>
+                                    </div>
+                                {% endfor %}
                                 </div>
                             </div>
 
-                            <div class="container pt60 pb20 bg-faded" id="folio1">
+                            <!--<div class="container pt60 pb20 bg-faded" id="folio1">
                                 <h3 class="center-title text-center mb40 h3"  style="color:#ff6f00">My Usecase</h3>
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-6 mb40">
-                                        <a href="#" class="folio-card">
-                                            <img src="{% static 'images/img6.jpg' %}" alt="" class="img-fluid">
-                                            <h4 style="color:#ff6f00">Geotag card design</h4>
-                                        </a>
-                                    </div><!--col-->
-                                </div>
-                            </div>
 
-
+                            </div>-->
                       </div>
                       </div>
                 </main>

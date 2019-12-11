@@ -21,4 +21,6 @@ class UseCaseAdmin(admin.ModelAdmin):
     prepopulated_fields = {'usecase_slug': ('usecase_title',)}
 
 
+
+
 admin.site.register(UseCase,UseCaseAdmin)

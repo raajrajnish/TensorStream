@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from .models import UserInfo
+from dlblog.models import Blog
 
 
 def logout(request):
@@ -13,6 +14,7 @@ def logout(request):
 
 def signup(request):
     if request.method == 'POST':
+
         if request.POST['password1'] == request.POST['password2']:
             try:
                 user = User.objects.get(username=request.POST['username'])
@@ -32,4 +34,5 @@ def signup(request):
 
 @login_required
 def userhome(request):
-    return render(request, 'dlonboarding/home.html')
+    blogs = Blog.objects.filter(author=request.user)
+    return render(request, 'dlonboarding/home.html',{'blogs':blogs})

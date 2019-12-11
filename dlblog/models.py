@@ -18,7 +18,7 @@ STATUS = (
 class Blog(models.Model):
     blog_main_image = models.FileField(upload_to='blog/images/')
     title = models.CharField(max_length=200,unique=True)
-    summary = RichTextUploadingField(max_length=80,unique=True)
+    summary = models.CharField(max_length=200,unique=True)
     slug = models.SlugField(max_length=200,unique=True)
     author = models.ForeignKey(User,on_delete=models.CASCADE,related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
@@ -60,3 +60,5 @@ class UseCase(models.Model):
     # Django will use it in many places, such as the administration site.
     def __str__(self):
         return self.usecase_title
+
+
