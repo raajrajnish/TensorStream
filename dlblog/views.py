@@ -12,10 +12,13 @@ from .forms import addMainContent
 # Create your views here.
 
 def home(request):
-    return render(request,'dlblog/home.html',{'blog':Blog.objects.all()[0:3],'usecase':UseCase.objects.all()[0:3]})
+    only_pub_blog = Blog.objects.filter(status=1)
+    ony_pub_ucase = UseCase.objects.all()[0:6]
+    return render(request,'dlblog/home.html',{'blog':only_pub_blog[0:6],'usecase':ony_pub_ucase})
 
 def blogs(request):
-    return render(request,'dlblog/blogs.html',{'blog':Blog.objects.all()})
+    only_pub_blog = Blog.objects.filter(status=1)
+    return render(request,'dlblog/blogs.html',{'blog':only_pub_blog})
 
 
 def login(request):
@@ -29,16 +32,11 @@ def login(request):
             # do the login
             auth.login(request,user)
             # if user is present and enters valid credentials
-            blogs = Blog.objects.all()
-            return render(request,'dlonboarding/home.html',{'user':user,'blogs':blogs})
+            return render(request,'dlonboarding/home.html',{'user':user})
         else:
             return render(request,'dlblog/home.html',{'error':"Please enter valid Credentials!"})
     else:
         return render(request, 'dlblog/home.html',{'error':"Please enter valid Credentials!"})
-
-
-def fetch_blog(request):
-    return render
 
 
 @login_required
@@ -81,8 +79,6 @@ def create(request):
 def create(request):
     if request.method == "POST":
         form = addMainContent(request.POST,request.FILES)
-        print("Form is : ",form)
-
         if form.is_valid():
             instance = form.save(commit=False)
             instance.author =  request.user
@@ -91,17 +87,29 @@ def create(request):
             return redirect('home')
     else:
         form = addMainContent()
-
     return render(request, 'dlblog/newblog.html',{'form':form})
+
+
+@login_required
+def edit_blog(request,slug):
+    blog = get_object_or_404(Blog, slug=slug)
+    if request.method == "POST":
+        form = addMainContent(request.POST or None,instance=blog)
+        try:
+            if form.is_valid():
+                form.content.save()
+                print('executed save')
+                return redirect('home')
+        except Exception as e:
+            print("Error :", e)
+    else:
+        form = addMainContent(instance=blog)
+        slug = blog.slug
+
+    return render(request, 'dlblog/editblog.html', {'form': form,'slug':slug})
 
 
 def blog_home(request,slug):
     blog = get_object_or_404(Blog, slug=slug)
     return render(request,'dlblog/blog_home.html',{'blog': blog})
-
-
-def edit(request):
-    blog = Blog.objects.all()
-    return render(request, 'dlblog/editblog.html', {'blog': blog})
-
 

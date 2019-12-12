@@ -10,19 +10,11 @@
                 <p class="text-center">Update Blog</p>
                 <!--<h3 class="text-center section-title mb70" style="color:#ff6f00">New Blog</h3>-->
 
-                {% for b in edit %}
-                {{ b.title }}
-                {% endfor %}
-
                 {% block mycontent %}
-                      <form method ="POST" action="create" enctype="multipart/form-data">
+                      <form method ="POST" action="/dlblog/edit_blog/{{slug}}/" enctype="multipart/form-data">
                             {% csrf_token %}
-
-
-
                             {{ form.media }}
-                            {{ form | crispy }}
-
+                            {{ form.content }}
                             <input class="btn btn-primary" type="submit" value="Update Blog"/>
                         </form>
                 {% endblock %}

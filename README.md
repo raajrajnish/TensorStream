@@ -97,6 +97,10 @@ python manage.py collectstatic
 
 
 
+--------------------------------------------
+on click of button form action is called.
+
+
 
 
 

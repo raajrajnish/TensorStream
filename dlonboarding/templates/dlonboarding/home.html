@@ -26,7 +26,7 @@
                                         </p>-->
                                         <div class="buttons">
                                             <br>
-                                            <a href="{% url 'create' %}"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fas fa-pencil-alt"></i> Create New Blog</a>
+                                            <a href="{% url 'create' %}"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fas fa-plus"></i></i></a>
 
                                             <!--<a href="#"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fab fa-cc-discover"></i> Usecase</a>
                                             <a href="#"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fas fa-user-edit"></i> Profile</a>-->
@@ -62,18 +62,21 @@
                                 <h3 class="center-title text-center mb40 h3"  style="color:#ff6f00">My Blogs</h3>
 
                                 <div class="row">
-                                {% for b in blogs %}
+
+                                {% for cub in currentuserblogs %}
+
                                     <div class="col-md-4" >
                                       <div class="card mb-4 shadow-sm" >
                                           <div class="inner">
-                                                <a href="/dlblog/{{ b.slug }}" ><img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{b.blog_main_image.url}}" >
+                                                <a href="/dlblog/{{ cub.slug }}" ><img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{cub.blog_main_image.url}}" >
                                         </img></a>
                                         </div>
 
                                         <div class="card-body" >
-                                            <a href="/dlblog/{{ b.slug }}"><h4 style="color: #ff6f00">{{ b.title }}</h4></a>
+                                            <a href="/dlblog/{{cub.slug }}"><h4 style="color: #ff6f00">{{ cub.title }}</h4></a>
                                         </div>
-                                          <a href= "{% url 'edit' %}" class="btn" style="color:#ff6f00">Edit</a>
+                                          <a href= "#edit_not_allowed" class="btn" style="color:#ff6f00">Edit-Contact Admin</a>
+                                          <!--<a href= "/dlblog/edit_blog/{{ cub.slug }}" class="btn" style="color:#ff6f00">Edit</a>-->
                                       </div>
                                     </div>
                                 {% endfor %}

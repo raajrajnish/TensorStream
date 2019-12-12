@@ -34,5 +34,5 @@ def signup(request):
 
 @login_required
 def userhome(request):
-    blogs = Blog.objects.filter(author=request.user)
-    return render(request, 'dlonboarding/home.html',{'blogs':blogs})
+    userblog = Blog.objects.filter(author=request.user)
+    return render(request, 'dlonboarding/home.html',{'currentuserblogs':userblog})
