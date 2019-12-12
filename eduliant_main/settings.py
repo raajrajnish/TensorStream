@@ -108,8 +108,8 @@ WSGI_APPLICATION = 'eduliant_main.wsgi.application'
 DATABASES = {
                 'default': {
                     'ENGINE': 'django.db.backends.postgresql',
-                    'NAME': 'deeplearningdb',
-                    'USER': 'deeplearning',
+                    'NAME': 'tensorstreamdb',
+                    'USER': 'neurosight',
                     'PASSWORD':'lr201203m',
                     'HOST':'localhost',
                     'PORT':'5432'
