@@ -6,27 +6,16 @@
                             {% load static %}
                         <div class="container">
                           <br>
-                              <header style="background-image: url('{{blog.blog_main_image.url}}')" >
-                                <div class="overlay"></div>
-                                <div class="container">
-                                  <div class="row">
-                                    <div class="col-lg-8 col-md-10 mx-auto">
-                                      <div class="post-heading">
-                                        <br>
-                                        <h1 style="color:#fff">{{blog.title}}</h1>
-                                          <br>
-                                          <h3 style="color:#fff">{{blog.summary}}</h3>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </header>
+                              <img src="{{blog.blog_main_image.url}}" height="520" width="1080">
                           </div>
 
                         <article>
                           <div class="row">
                             <div class="col-lg-8 col-md-10 mx-auto">
                               <br>
+                                <h1>{{blog.title}}</h1>
+                                <h5>{{blog.summary}}</h5>
+                                <br>
                                 <h5 class="meta" style="color: #ff6f00">Posted by <strong style="color: #000000">{{ blog.author }}</strong>
                                     on <strong style="color: #000000">{{ blog.created_on}}</strong> </h5>
                                 <br>

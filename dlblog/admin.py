@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blog,UseCase
+from .models import Blog,UseCase,Comment
 
 
 # Register your models here.
@@ -20,7 +20,14 @@ class UseCaseAdmin(admin.ModelAdmin):
     search_fields = ['usecase_title', 'usecase_content']
     prepopulated_fields = {'usecase_slug': ('usecase_title',)}
 
-
-
-
 admin.site.register(UseCase,UseCaseAdmin)
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'body', 'post', 'created_on', 'active')
+    list_filter = ('active', 'created_on')
+    search_fields = ('name', 'email', 'body')
+    actions = ['approve_comments']
+
+    def approve_comments(self, request, queryset):
+        queryset.update(active=True)
+

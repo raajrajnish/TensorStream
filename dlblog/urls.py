@@ -10,5 +10,5 @@ urlpatterns = [
     path('newblog',views.newblog,name='newblog'),
     path('edit_blog/<slug:slug>/',views.edit_blog,name='edit_blog'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-
+    path('post_detail', views.post_detail, name='post_detail'),
 ]
