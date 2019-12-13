@@ -84,7 +84,7 @@ def create(request):
             instance.author =  request.user
             instance.slug = slugify(request.POST['title'])
             instance.save()
-            return redirect('home')
+            return redirect('/dlblog/'+instance.slug)
     else:
         form = addMainContent()
     return render(request, 'dlblog/newblog.html',{'form':form})
