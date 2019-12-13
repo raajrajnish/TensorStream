@@ -1,18 +1,38 @@
 server {
     listen 80;
-    server_name 142.93.214.102;
+    server_name 159.65.147.96;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
-        root /home/rajnishdeploy/deeplearning;
+        root /home/neurosight/TensorStream;
+    }
+
+    location /static/images/ {
+        root /home/neurosight/TensorStream;
     }
 
     location /media/blog/images/ {
-        root /home/rajnishdeploy/deeplearning;
+        root /home/neurosight/TensorStream;
     }
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/home/rajnishdeploy/deeplearning/eduliant_main.sock;
+        proxy_pass http://unix:/home/neurosight/TensorStream/eduliant_main.sock;
     }
 }
+
+
+
+
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=neurosight
+Group=www-data
+WorkingDirectory=/home/neurosight/TensorStream
+ExecStart=/home/neurosight/stream/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/neurosight/TensorStream/eduliant_main.sock eduliant_main.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

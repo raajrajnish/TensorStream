@@ -98,7 +98,11 @@ python manage.py collectstatic
 
 
 --------------------------------------------
-on click of button form action is called.
+Everytime we make any changes to our django project file we need to
+1. restrat gunicorn
+sudo systemctl restart gunicorn
+2. sudo nginx -t && sudo systemctl restart nginx
+
 
 
 

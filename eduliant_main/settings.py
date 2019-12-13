@@ -108,8 +108,8 @@ WSGI_APPLICATION = 'eduliant_main.wsgi.application'
 DATABASES = {
                 'default': {
                     'ENGINE': 'django.db.backends.postgresql',
-                    'NAME': 'tensorstreamdb',
-                    'USER': 'neurosight',
+                    'NAME': 'deeplearningdb',
+                    'USER': 'deeplearning',
                     'PASSWORD':'lr201203m',
                     'HOST':'localhost',
                     'PORT':'5432'
@@ -165,12 +165,13 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'home'
 
-SOCIAL_AUTH_GITHUB_KEY = '1ae7673b65e953bd7ab7'
-SOCIAL_AUTH_GITHUB_SECRET = '7157ce6003da6966529ab264c80fba1049057206'
+
+SOCIAL_AUTH_GITHUB_KEY = 'd29fa81cd2624e3128bb'
+SOCIAL_AUTH_GITHUB_SECRET = '4a5fc3ad09366be4feda2fa64f4b2dd0329a463a'
 
 
-SOCIAL_AUTH_FACEBOOK_KEY = '433891340635179'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'f98db568b445a3a09cd1c09bc32c97c2'
+SOCIAL_AUTH_FACEBOOK_KEY = '1544424865734066'
+SOCIAL_AUTH_FACEBOOK_SECRET = '39e2f82956dcff15b1bf3ba592066297'
 
 CKEDITOR_UPLOAD_PATH = "blog/uploads/"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
