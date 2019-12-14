@@ -6,26 +6,23 @@
             <div class="album py-5 bg-light">
                 <div class="container">
                     <br>
-                    <h3 class="text-center section-title mb70" style="color:#ff6f00">Latest Blogs</h3>
+                    <h3 class="text-center section-title mb70" style="color:#00000">Latest Blogs</h3>
                   <div class="row">
-
-
-
                     {% for b in blog %}
-
-                    <div class="card mb-3" style="width: 100%;border-color: #ff6f00;" >
+                    <div class="card mb-3 polaroid" style="width: 100%;" >
                       <div class="row no-gutters"  >
-                        <div class="col-md-4" >
+                        <div class="col-md-4 polaroid">
                             <div class="inner">
-                            <a href="{{ b.slug }}" ><img src="{{b.blog_main_image.url}}" class="card-img" alt="..."></a>
+                            <a href="{{ b.slug }}" ><img src="{{b.blog_main_image.url}}" width=100% height="250" class="card-img" alt="..."></a>
                             </div>
 
                         </div>
                         <div class="col-md-8" >
                           <div class="card-body">
-                            <h3 class="card-title" style="color:#ff6f00">{{ b.title }}</h3>
-                            <h5 class="card-text">{{ b.summary | safe}}</h5>
-                            <p class="card-text"><H6>Author : {{ b.author }} Create On : {{ b.created_on }}</H6></p>
+                            <a href="{{ b.slug }}"><h3 class="card-title" style="color:#ff6f00">{{ b.title }}</h3></a>
+                            <h5 class="card-text-grey">{{ b.summary | safe}}</h5>
+                              <hr>
+                              <h6 class="card-text">This blog was written for TensorStream.org by <strong>{{ b.author }} </strong> on <strong>{{ b.created_on }}</strong></h6>
                           </div>
                         </div>
                       </div>

@@ -31,13 +31,14 @@
 
 
          <script type="text/javascript">
-     function Expand(obj){
-      if (!obj.savesize) obj.savesize=obj.size;
-      obj.size=Math.max(obj.savesize,obj.value.length);
-     }
-  </script>
+             function Expand(obj){
+              if (!obj.savesize) obj.savesize=obj.size;
+              obj.size=Math.max(obj.savesize,obj.value.length);
+             }
+          </script>
 
-        <style>
+
+         <style>
                 .inner{
                     overflow: hidden;
                 }
@@ -51,6 +52,17 @@
                 }
         </style>
 
+                        <style>
+                            div.polaroid {
+                              width: 330px;
+                              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                              text-align: left;
+                            }
+
+                            div.container {
+                              padding: 0px;
+                            }
+                        </style>
     </head>
 
     <body data-spy="scroll" data-target="#landingkit-navbar" data-offset="74">
@@ -63,7 +75,7 @@
 
                     <a class="navbar-brand" href="{% url 'home' %}">
 
-                        <h4 style="font-family:Gotham;font-size:34px;color:#00000">[<span style="color:#ff6f00"> ]</span> Tensor<span style="color:#ff6f00">Stream</span></h4>
+                        <h6 style="font-family:Gotham;font-size:34px;color:#00000">[<span style="color:#ff6f00"> ]</span> Tensor<span style="color:#ff6f00">Stream</span></h6>
                     </a>
 
                     <div class="collapse navbar-collapse" id="navbarlanding">

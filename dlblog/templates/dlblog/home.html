@@ -10,13 +10,12 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 pb50">
                         <h4 class="mb20 text-white" style="color:#fff">An end to end deep learning platform</h4>
-                        <h2 class="mb20 text-white" style="color:#fff">Learn Pattern Recognition</h2>
-                        <h5 class="mb20 text-white" style="color:#fff">
-                            Understand Supervised Learning and Semi-supervised Learning. Master Pattern Recognition,
-                            Feature Extraction, Model Building using Python, Tensorflow, Spacy and many more.   </h5>
+                        <h2 class="mb20 text-white" style="color:#fff">Master Pattern Recognition</h2>
+                        <h5 class="mb20 text-white" style="color:#fff">Learn supervised learnig by understandig core concepts of deep learning and how to implement
+                        them in production using tensorflow, keras, django, spacy and many more.</h5>
                         <div class="mb20 text-gray">
-                            <h5 class="mb20 text" style="color:#fff">“Failure will never overtake me if my definition to succeed is strong enough”
-                                ― A P J Abdul Kalam</h5>
+                            <h6 class="mb20 text" style="color:#fff">“Failure will never overtake me if my definition to succeed is strong enough”
+                                ― A P J Abdul Kalam</h6>
                             <!--<a data-scroll href="#features" class="btn btn-white-outline mr-3" style="color:#ff6f00">Course - Coming Soon</a>
                             -->
                         </div>
@@ -24,7 +23,7 @@
 
                     <div class="col-lg-5 ml-auto">
                         <h6 >{% if error %} <strong style="color:#fff;">{{ error }}</strong> {% endif %}</h6>
-                        <h4 class="text-white">Join Us and Share your <strong style="color:#00000;">KNOWLEDGE</strong></h4>
+                        <h4 class="text-white">Help us in spreading the knowledge</h4>
                         <!--<h3 class="mb20 text-gray" style="color:#fff">Earn INR 299* or 99* Per Share</h3>-->
 
                             <form id="form-id" method ="POST" action="{% url 'login' %}">
@@ -32,7 +31,7 @@
                                 <div class="row">
 
                                     <div class="col-md-12 mb20">
-                                        <h4 style="color:#fff;display:inline;">Blogger please login via</h4>
+                                        <h6 style="color:#fff;display:inline;">Come Join us Login using</h6>
                                         <!--<h4 style="color:#fff;display:inline;"><a href="{% url 'social:begin' 'facebook' %}" style="color:#ffffff"><i class="fab fa-facebook"> facebook</i></a></h4>-->
                                         <h4  style="color:#fff;display:inline;"><a href="{% url 'social:begin' 'github' %}" style="color:#ffffff"><i class="fab fa-github"></i> github</a> or </h4>
                                         <hr style="border-color:#fff">
@@ -44,7 +43,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <!--<input class="btn btn-outline-default" style="border-color: #fff;" type="submit" value="Login"/>-->
-                                        <a data-scroll href="#" class="btn btn-white-outline mr-3" onclick="document.forms['form-id'].submit();">Bloggers Home </a>
+                                        <a data-scroll href="#" class="btn btn-white-outline mr-3" onclick="document.forms['form-id'].submit();">My Home </a>
                                         <a data-scroll href="{% url 'signup' %}" class="btn btn-white-outline mr-3">Sign Up</a>
 
                                     </div>
@@ -68,8 +67,9 @@
                   {% for b in blog %}
 
                 <div class="col-md-4" >
-                  <div class="card mb-4 shadow-sm" >
-                      <div class="inner">
+                    <div class="polaroid">
+                  <div class="card mb-4 shadow-sm " >
+                      <div class="inner" >
                             <a href="dlblog/{{ b.slug }}" ><img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{b.blog_main_image.url}}" >
                     </img></a>
                     </div>
@@ -79,6 +79,7 @@
                     </div>
                       <!--<a href="dlblog/{{ b.slug }}" class="btn" style="color:#ff6f00">Read More</a>-->
                   </div>
+                        </div>
                 </div>
                   {% endfor %}
               </div>
@@ -114,6 +115,8 @@
 
 
     </main>
+
+
 
 </main>
 
