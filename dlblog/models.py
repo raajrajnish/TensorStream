@@ -17,8 +17,8 @@ STATUS = (
 
 class Blog(models.Model):
     blog_main_image = models.FileField(upload_to='blog/images/')
-    title = models.CharField(max_length=200,null=True, blank=True)
-    summary = models.CharField(max_length=200,null=True, blank=True)
+    title = models.CharField(max_length=200,null=True, blank=False)
+    summary = models.CharField(max_length=200,null=True, blank=False)
     slug = models.SlugField(max_length=200,unique=True)
     author = models.ForeignKey(User,on_delete=models.CASCADE,related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True)

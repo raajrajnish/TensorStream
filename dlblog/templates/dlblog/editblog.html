@@ -13,8 +13,9 @@
                 {% block mycontent %}
                       <form method ="POST" action="/dlblog/edit_blog/{{slug}}/" enctype="multipart/form-data">
                             {% csrf_token %}
-                            {{ form.media }}
-                            {{ form.content }}
+                              {{form.media }}
+                              {{form | crispy}}
+                          <br>
                             <input class="btn btn-primary" type="submit" value="Update Blog"/>
                         </form>
                 {% endblock %}

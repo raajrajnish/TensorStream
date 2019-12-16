@@ -94,19 +94,19 @@ def create(request):
 def edit_blog(request,slug):
     blog = get_object_or_404(Blog, slug=slug)
     if request.method == "POST":
-        form = addMainContent(request.POST or None,instance=blog)
+        form = addMainContent(request.POST ,request.FILES,instance=blog)
         try:
             if form.is_valid():
-                form.content.save()
-                print('executed save')
-                return redirect('home')
+                instance = form.save(commit=False)
+                instance.save()
+                return redirect('/dlblog/'+instance.slug)
         except Exception as e:
             print("Error :", e)
     else:
         form = addMainContent(instance=blog)
         slug = blog.slug
 
-    return render(request, 'dlblog/newblog.html', {'form': form,'slug':slug})
+    return render(request, 'dlblog/editblog.html', {'form': form,'slug':slug})
 
 
 def blog_home(request,slug):

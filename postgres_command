@@ -1,0 +1,10 @@
+Postgress Command
+
+1. Start postgress - sudo su postgres
+2. Start Server - psql
+3. List all db - \list
+4. switch to db - \c dbname
+5. view all tables in the db = \dt
+6. view all rows in a table - TABLE mytablename; or SELECT * FROM mytablename; or SELECT * FROM mytable LIMIT 10;
+7 delete a row form a table - DELETE FROM tablename t WHERE t.id=67
+8. coming out of a table row -:q
