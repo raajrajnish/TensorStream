@@ -3,7 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../UC_jdcv/CV-compare" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../UC_jdcv/Entity-Recognition-In-Resumes-SpaCy" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/django-markdown2" vcs="Git" />
   </component>

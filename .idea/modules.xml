@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../UC_jdcv/JDCV/.idea/CV-compare.iml" filepath="$PROJECT_DIR$/../UC_jdcv/JDCV/.idea/CV-compare.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../UC_jdcv/Entity-Recognition-In-Resumes-SpaCy/.idea/Entity-Recognition-In-Resumes-SpaCy.iml" filepath="$PROJECT_DIR$/../UC_jdcv/Entity-Recognition-In-Resumes-SpaCy/.idea/Entity-Recognition-In-Resumes-SpaCy.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/TensorTrade.iml" filepath="$PROJECT_DIR$/.idea/TensorTrade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jdcv/.idea/jdcv.iml" filepath="$PROJECT_DIR$/../jdcv/.idea/jdcv.iml" />
     </modules>
   </component>
 </project>

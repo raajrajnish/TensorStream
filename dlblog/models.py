@@ -17,8 +17,8 @@ STATUS = (
 
 class Blog(models.Model):
     blog_main_image = models.FileField(upload_to='blog/images/')
-    title = models.CharField(max_length=200,unique=True)
-    summary = models.CharField(max_length=200,unique=True)
+    title = models.CharField(max_length=200,null=True, blank=True)
+    summary = models.CharField(max_length=200,null=True, blank=True)
     slug = models.SlugField(max_length=200,unique=True)
     author = models.ForeignKey(User,on_delete=models.CASCADE,related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
@@ -43,9 +43,9 @@ class Blog(models.Model):
 
 class UseCase(models.Model):
     usecase_main_image = models.FileField(upload_to='usecase/images/')
-    usecase_title = models.CharField(max_length=50,unique=True)
-    usecase_summary = models.CharField(max_length=80,unique=True)
-    usecase_slug = models.SlugField(max_length=200,unique=True)
+    usecase_title = models.CharField(max_length=50)
+    usecase_summary = models.CharField(max_length=80)
+    usecase_slug = models.SlugField(max_length=200)
     usecase_author = models.ForeignKey(User,on_delete=models.CASCADE,related_name='usecase_posts')
     usecase_updated_on = models.DateTimeField(auto_now=True)
     usecase_content = models.TextField()
