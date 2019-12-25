@@ -1442,12 +1442,12 @@ Parallax backgrounds - change hero gradient here
   background: linear-gradient(215deg, #ff9100 0%, #ff6f00 70%, #ff9933 100%);
   background: -webkitlinear-gradient(215deg, #ff6f00 0%, #ff6f00 70%, #ff9933 100%);
   position: absolute;
-  left: 50%;
+  left: 0%;
   top: 0;
   bottom: 0;
   right: 0;
-  width: 50%;
-  opacity: 0.9;
+  width: 100%;
+  opacity: 0.4;
   z-index: 1; }
 
 

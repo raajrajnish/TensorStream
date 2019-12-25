@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blog,UseCase
+from .models import Blog,UseCase,Comment
 
 
 # Register your models here.
@@ -21,6 +21,7 @@ class UseCaseAdmin(admin.ModelAdmin):
     prepopulated_fields = {'usecase_slug': ('usecase_title',)}
 
 admin.site.register(UseCase,UseCaseAdmin)
+admin.site.register(Comment)
 
 
 

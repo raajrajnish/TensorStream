@@ -6,36 +6,22 @@
 
         <meta charset="utf-8">
         {% load static %}
-        <link rel='icon' href='{% static "images/fav.png" %}' type='image/x-icon'> </link>
+        <link rel='icon' href="{% static 'images/fav.png' %}" type='image/x-icon'> </link>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>TensorStream : Learn Deep Learning,Computer Vision and NLP</title>
         <!-- Plugins CSS -->
-        <link href="/static/css/plugins/plugins.css" rel="stylesheet">
+        <link href="{% static 'css/plugins/plugins.css' %}" rel="stylesheet">
 
         <link href="/static/linearicons/fonts.css" rel="stylesheet">
-        <link href="/static/css/style.css" rel="stylesheet">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
         <!--<link href="/static/css/css_cards.css" rel="stylesheet">-->
         <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
         <link href="{% static 'fontawesome/css/all.css' %}" rel="stylesheet">
 
 
-        <!-- Custom styles for this template
-        <link href="css/clean-blog.min.css" rel="stylesheet">-->
-
-        <script language='javascript'>
-        SyntaxHighlighter.config.bloggerMode = true;
-        SyntaxHighlighter.config.clipboardSwf = 'http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf';
-        SyntaxHighlighter.all();
-        </script>
 
 
-         <script type="text/javascript">
-             function Expand(obj){
-              if (!obj.savesize) obj.savesize=obj.size;
-              obj.size=Math.max(obj.savesize,obj.value.length);
-             }
-          </script>
 
 
          <style>
@@ -63,6 +49,59 @@
                               padding: 0px;
                             }
                         </style>
+
+
+        <style>
+
+
+
+/*Profile Card 5*/
+.profile-card-5{
+    margin-top:20px;
+}
+.profile-card-5 .btn{
+    border-radius:2px;
+    text-transform:uppercase;
+    font-size:12px;
+    padding:7px 20px;
+}
+.profile-card-5 .card-img-block {
+    width: 91%;
+    margin: 0 auto;
+    position: relative;
+    top: -20px;
+
+}
+.profile-card-5 .card-img-block img{
+    border-radius:5px;
+    box-shadow:0 0 10px #4E5E30;
+    transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-img-block:hover {
+  transform: scale(1.0);
+  transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+.profile-card-5 h5{
+    color:#4E5E30;
+    font-weight:600;
+}
+.profile-card-5 p{
+    font-size:14px;
+    font-weight:300;
+}
+.profile-card-5 .btn-primary{
+    background-color:#00000;
+    border-color:#4E5E30;
+
+}
+        </style>
+
+
+
     </head>
 
     <body data-spy="scroll" data-target="#landingkit-navbar" data-offset="74">
@@ -109,7 +148,7 @@
                                 <a class="nav-link" data-scroll href="{% url 'blogs' %}">Blogs</a>
                             </li>
                              <li class="nav-item">
-                                <!--<a class="nav-link" data-scroll href="#testimonials">UseCase</a>-->
+                                <a class="nav-link" data-scroll href="{% url 'signin' %}">Login</a>
                             </li>
 
                             {% endif %}
@@ -168,10 +207,10 @@
         <!--back to top
         <a href="#" class="back-to-top" id="back-to-top"><i class="icon-chevron-up"></i></a>-->
         <!-- jQuery first, then Tether, then Bootstrap JS. -->
-        <script type="text/javascript" src="/static/js/plugins/plugins.js"></script>
+        <script type="text/javascript" src="{% static 'js/plugins/plugins.js' %}"></script>
         <!--tweet-scroller
         <script src="/static/tweetie/tweetie.min.js" type="text/javascript"></script>-->
-        <script type="text/javascript" src="/static/js/landing.custom.js"></script>
+        <script type="text/javascript" src="{% static 'js/landing.custom.js' %}"></script>
         <!-- Custom scripts for this template
         <script src="js/clean-blog.min.js"></script> -->
 

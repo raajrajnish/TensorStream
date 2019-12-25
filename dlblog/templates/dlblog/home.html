@@ -2,56 +2,27 @@
 
 {% block content %}
 
-
-
-        <div id="home" class=" parallax-hero" data-jarallax='{"speed": 0.2}' data-jarallax-video="https://youtu.be/c3S3Q0V_RS4">
+        <div id="home" class="parallax-hero" data-jarallax='{"speed": 0.2}' data-jarallax-video="https://youtu.be/Ayo2K9kPuFU">
             <div class="parallax-overlay"></div>
+            <!--<div class="d-flex align-items-center"></div>-->
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 pb50">
-                        <h4 class="mb20 text-white" >An end to end deep learning platform</h4>
-                        <h2 class="mb20 text-white" style="color:#00000">Master Pattern Recognition</h2>
-                        <h5 class="mb20 text-white" style="color:#fff">Learn supervised learnig by understandig core concepts of deep learning and how to implement
-                        them in production using tensorflow, keras, django, spacy and many more.</h5>
+                <div class="row">
+                    <div class="col-lg-10 ml-auto mr-auto text-center">
+                        <h4 class="mb20 text-white" >An end to end ML and AI platform</h4>
+                        <h1 class="mb20 text-white" style="color:#00000">Master Deep Learning</h1>
+                        <h4 class="mb20 text-white" style="color:#fff">Master the computer vision skills behind advances in robotics and automation.
+                            Write programs to analyze images, implement feature extraction, and recognize objects using deep learning models.</h4>
                         <div class="mb20 text-gray">
-                            <h6 class="mb20 text" style="color:#fff">“Failure will never overtake me if my definition to succeed is strong enough”
-                                ― A P J Abdul Kalam</h6>
-                            <!--<a data-scroll href="#features" class="btn btn-white-outline mr-3" style="color:#ff6f00">Course - Coming Soon</a>
-                            -->
+                            <br>
+                            <!--<a data-scroll href="#features" class="btn btn-white-outline mr-3">Course - Coming Soon</a>-->
+
+                            <br><br>
+                            <h6 class="mb20 text" style="color:#fff"><bold>“Failure will never overtake me if my definition to succeed is strong enough”
+                            <a class="mb20 text" href="https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam" target=" " style="color:#fff">APJ Abdul Kalam</a></bold></h6>
+
                         </div>
                     </div>
 
-                    <div class="col-lg-5 ml-auto">
-                        <h6 >{% if error %} <strong style="color:#fff;">{{ error }}</strong> {% endif %}</h6>
-                        <h4 class="text-white">Help us in spreading the knowledge</h4>
-                        <!--<h3 class="mb20 text-gray" style="color:#fff">Earn INR 299* or 99* Per Share</h3>-->
-
-                            <form id="form-id" method ="POST" action="{% url 'login' %}">
-                                {% csrf_token %}
-                                <div class="row">
-
-                                    <div class="col-md-12 mb20">
-                                        <h6 style="color:#fff;display:inline;">Come Join us Login using</h6>
-                                        <!--<h4 style="color:#fff;display:inline;"><a href="{% url 'social:begin' 'facebook' %}" style="color:#ffffff"><i class="fab fa-facebook"> facebook</i></a></h4>-->
-                                        <h4  style="color:#fff;display:inline;"><a href="{% url 'social:begin' 'github' %}" style="color:#ffffff"><i class="fab fa-github"></i> github</a> or </h4>
-                                        <hr style="border-color:#fff">
-
-                                        <input type="text" name="username" class="form-control" placeholder="Enter Username" required="">
-                                    </div>
-                                    <div class="col-md-12 mb20">
-                                        <input type="password" name="password" class="form-control" placeholder="Enter Password" required="">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <!--<input class="btn btn-outline-default" style="border-color: #fff;" type="submit" value="Login"/>-->
-                                        <a data-scroll href="#" class="btn btn-white-outline mr-3" onclick="document.forms['form-id'].submit();">My Home </a>
-                                        <a data-scroll href="{% url 'signup' %}" class="btn btn-white-outline mr-3">Sign Up</a>
-
-                                    </div>
-
-                                </div>
-                            </form>
-
-                    </div>
                 </div>
             </div>
         </div><!--hero-->
@@ -61,63 +32,64 @@
     <main role="main">
           <div class="album py-5 bg-light" >
             <div class="container">
-                    <h3 class="text-center section-title mb70" style="color:#00000">Blogs</h3>
+                    <h3 class="text-center section-title mb70" style="color:#00000">Latest Blogs</h3>
 
-              <div class="row">
-                  {% for b in blog %}
+                <!--Profile Card 5-->
 
-                <div class="col-md-4" >
-                    <div class="polaroid">
-                  <div class="card mb-4 shadow-sm " >
-                      <div class="inner" >
-                            <a href="dlblog/{{ b.slug }}" ><img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{b.blog_main_image.url}}" >
-                    </img></a>
+                <div class="row">
+                 {% for b in blog %}
+    		<div class="col-lg-4 d-flex align-items-stretch">
+    		    <div class="card profile-card-5 polaroid">
+                    <a href="dlblog/{{ b.slug }}">
+                        <div class="card-img-block">
+    		            <img class="card-img-top" src="{{b.blog_main_image.url}}" alt="Card image cap">
+    		        </div>
+                    <div class="card-body pt-0">
+                    <h5 class="card-title">{{b.title}}</h5>
+                        <h6>{{b.created_on}}</h6>
+                        <h6>{{b.summary}}</h6>
+                        <h6 class="text float-right" style="color:#ff6f00;">Read More >></h6>
                     </div>
 
-                    <div class="card-body" >
-                        <a href="dlblog/{{ b.slug }}"><h4 style="color: #ff6f00">{{ b.title }}</h4></a>
-                    </div>
-                      <!--<a href="dlblog/{{ b.slug }}" class="btn" style="color:#ff6f00">Read More</a>-->
-                  </div>
-                        </div>
+                    </a>
                 </div>
-                  {% endfor %}
-              </div>
+    		</div>
+                 {% endfor %}
+                </div>
             </div>
           </div>
-
-        <!--
 
         <div class="album py-5 bg-light" >
             <div class="container">
-                    <h3 class="text-center section-title mb70" style="color:#ff6f00">UseCase</h3>
+                    <h3 class="text-center section-title mb70" style="color:#00000">Free Courses</h3>
 
-              <div class="row">
-                  {% for uc in usecase %}
 
-                <div class="col-md-4" >
-                  <div class="card mb-4 shadow-sm" >
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{uc.usecase_main_image.url}}" ></img>
-                    <div class="card-body" style="border-color: #ff6f00">
-                        <h4>{{ uc.usecase_title }}</h4>
+                <div class="row">
+                 {% for b in courses %}
+    		<div class="col-lg-4 d-flex align-items-stretch">
+    		    <div class="card profile-card-5 polaroid">
+                    <a href="dlblog/{{ b.slug }}">
+                        <div class="card-img-block">
+    		            <img class="card-img-top" src="{{b.course_main_image.url}}" alt="Card image cap">
+    		        </div>
+                    <div class="card-body pt-0">
+                    <h5 class="card-title">{{b.course_title}}</h5>
+                        <h4>{{b.course_name}}</h4>
+                        <hr>
+                        <h6 class="text float-right" style="color:#ff6f00;">Go To Course >></h6>
 
                     </div>
-                      <a href="#" class="btn" style="color:#ff6f00">Read More</a>
-                  </div>
+
+
+                    </a>
                 </div>
-                  {% endfor %}
-              </div>
+    		</div>
+                 {% endfor %}
+                </div>
             </div>
           </div>
 
-          -->
-
-
-
     </main>
-
-
-
 </main>
 
 

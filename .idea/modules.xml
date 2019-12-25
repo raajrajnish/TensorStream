@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../DeepLearning/.idea/DeepLearning.iml" filepath="$PROJECT_DIR$/../DeepLearning/.idea/DeepLearning.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/TensorTrade.iml" filepath="$PROJECT_DIR$/.idea/TensorTrade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../article_to_summary/.idea/article_to_summary.iml" filepath="$PROJECT_DIR$/../article_to_summary/.idea/article_to_summary.iml" />
       <module fileurl="file://$PROJECT_DIR$/../jdcv/.idea/jdcv.iml" filepath="$PROJECT_DIR$/../jdcv/.idea/jdcv.iml" />
     </modules>
   </component>

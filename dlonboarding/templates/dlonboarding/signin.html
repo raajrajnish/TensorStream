@@ -1,0 +1,99 @@
+{% extends 'master.html' %}
+
+{% block content %}
+
+
+<main class="main-content">
+    <hr>
+
+    <body class='bg-white'>
+        <link href="/static/login/css/style.css" rel="stylesheet">
+        <div class="page-wrapper" id="page-wrapper">
+
+            <main class="content">
+
+                <div class="container-fluid flex d-flex">
+                    <div class='row flex align-items-center'>
+                        <div class='col-lg-6 d-flex flex h-lg-down  full-height bg-pattern bg-fHeight' style='background-image: url(/static/images/fheight1.jpg)'>
+
+                        </div>
+                        <div class='col-lg-3 col-md-5 col-sm-6 ml-auto flex d-flex mr-auto full-height pt-40 pb-20'>
+                            <div class="w100 d-block">
+                                 <a href="{% url 'home' %}" class="avatar avatar60 ml-auto mr-auto text rounded-circle">
+                                        <h6 style="font-family:Gotham;font-size:34px;color:#00000">[<span style="color:#ff6f00"> ]</span> Tensor<span style="color:#ff6f00">Stream</span></h6></a>
+                            <div class="title-sep text-center sep-white mt-20 mb-30">
+                                <span class='font600 fs16 text-dark'>Sign In</span>
+                                <h6 >{% if error %} <strong style="color:#fff;">{{ error }}</strong> {% endif %}</h6>
+                            </div>
+                            <div>
+
+                                <form role="form" method ="POST" action="{% url 'signin' %}">
+                                    {% csrf_token %}
+                                        <div class="input-icon-group">
+                                            <div class="d-flex flex flex-row">
+                                                <label class="flex d-flex mr-auto" for='pass'>Username</label>
+                                           </div>
+                                            <div class='input-icon-append'>
+                                                <i class="fa fa-user"></i>
+                                                <input placeholder="Username" type="text" name="username" class="form-control" required="">
+                                            </div>
+                                        </div>
+                                        <div class="input-icon-group">
+                                           <div class="d-flex flex flex-row">
+                                               <label class="flex d-flex mr-auto" for='pass'>password</label>
+                                            <div class="flex d-flex ml-auto justify-content-end">
+                                                <!--<a href="#" class="text-primary fs12">Forget</a>-->
+                                            </div>
+                                           </div>
+                                            <div class='input-icon-append'>
+                                                <i class="fa fa-lock"></i>
+                                                <input id="pass" placeholder="Password" type="password" name="password" class="form-control" required="">
+                                            </div>
+                                        </div>
+                                        <div class="customUi-checkbox  pb-2">
+                                            <input id="check-remember" type="checkbox" name="agree">
+                                            <label for="check-remember">
+                                                <span class="label-checkbox"></span>
+                                                <span class="label-helper">Remember Me</span>
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="btn btn-gradient-primary btn-block btn-lg">Sign In</button>
+                                        <div class="pt-20 text-center">
+                                            Don't have an account? <a href='{% url "signup" %}' class='text-primary ml-2 b-b d-inline-block pb-1'>Sign Up Here</a>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li class="text-center pt-20 pb-20">
+                                                <div class="title-sep sep-white">
+                                                    <span>Or </span>
+                                                </div>
+                                            </li>
+                                            <!--<li>
+                                                <a href="javascript:void(0)" class="btn btn-social btn-border-o btn-icon btn-block  si-colored-facebook mr-2 mb-2">
+                                                    <i class="fab fa-facebook-f"></i> Sign In with Facebook
+                                                </a>
+                                            </li>-->
+                                            <li>
+                                                <a href="{% url 'social:begin' 'github' %}" class="btn btn-social btn-border-o btn-icon btn-block  si-colored-g-plus mr-2 mb-2">
+                                                    <i class="fab fa-github"></i> Sign In with Github
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </form>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- main end-->
+
+            </main><!-- page content end-->
+        </div><!-- app's main wrapper end -->
+        <!-- Common plugins -->
+
+    </body>
+
+</main>
+
+
+
+
+{% endblock %}

@@ -38,7 +38,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-
+    'courses.apps.CoursesConfig',
     'dlblog.apps.EduDefaultappConfig',
     'dlonboarding.apps.EduOnboardingConfig',
     'django.contrib.admin',
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'social_django',
     'crispy_forms',
+
 
 ]
 

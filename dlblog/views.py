@@ -1,9 +1,9 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import Blog,UseCase
+from courses.models import offerings
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-from .models import Blog
 from django.utils import timezone
 from django.template.defaultfilters import slugify
 from .forms import addMainContent
@@ -13,14 +13,15 @@ from .forms import addMainContent
 
 def home(request):
     only_pub_blog = Blog.objects.filter(status=1)
-    ony_pub_ucase = UseCase.objects.all()[0:6]
-    return render(request,'dlblog/home.html',{'blog':only_pub_blog[0:6],'usecase':ony_pub_ucase})
+    only_active_course = offerings.objects.filter(course_status=1)
+    ony_pub_ucase = UseCase.objects.filter(usecase_status=1)
+    return render(request,'dlblog/home.html',{'blog':only_pub_blog[0:3],'usecase':ony_pub_ucase[0:3],'courses':only_active_course[0:3]})
 
 def blogs(request):
     only_pub_blog = Blog.objects.filter(status=1)
     return render(request,'dlblog/blogs.html',{'blog':only_pub_blog})
 
-
+'''
 def login(request):
 
     if request.method == 'POST':
@@ -32,12 +33,13 @@ def login(request):
             # do the login
             auth.login(request,user)
             # if user is present and enters valid credentials
-            return render(request,'dlonboarding/home.html',{'user':user})
+            return render(request,'dlonboarding/userhome.html',{'user':user})
         else:
-            return render(request,'dlblog/home.html',{'error':"Please enter valid Credentials!"})
+            return render(request,'dlblog/signin.html',{'error':"Please enter valid Credentials!"})
     else:
-        return render(request, 'dlblog/home.html',{'error':"Please enter valid Credentials!"})
+        return render(request, 'dlblog/signin.html',{'error':"Please enter valid Credentials!"})
 
+'''
 
 @login_required
 def newblog(request):

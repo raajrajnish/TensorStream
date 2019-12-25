@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.urls import reverse
-
+from django.utils import timezone
 # Create your models here.
 
 #  tuple for STATUS of a post to keep draft and published posts separated when we render them out with templates.
@@ -61,4 +61,18 @@ class UseCase(models.Model):
     def __str__(self):
         return self.usecase_title
 
+
+class Comment(models.Model):
+    post = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name='comments')
+    author = models.CharField(max_length=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    approved_comment = models.BooleanField(default=False)
+
+    def approve(self):
+        self.approved_comment = True
+        self.save()
+
+    def __str__(self):
+        return self.text
 
