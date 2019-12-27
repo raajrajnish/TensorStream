@@ -25,6 +25,7 @@ urlpatterns = [
     path('',views.home,name='home'),
     path('dlonboarding/',include('dlonboarding.urls')),
     path('dlblog/',include('dlblog.urls')),
+    path('courses/',include('courses.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 

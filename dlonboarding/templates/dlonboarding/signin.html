@@ -7,14 +7,15 @@
     <hr>
 
     <body class='bg-white'>
-        <link href="/static/login/css/style.css" rel="stylesheet">
+    {% load staticfiles %}
+        <link href="{% static 'login/css/style.css' %}" rel="stylesheet">
         <div class="page-wrapper" id="page-wrapper">
 
             <main class="content">
 
                 <div class="container-fluid flex d-flex">
                     <div class='row flex align-items-center'>
-                        <div class='col-lg-6 d-flex flex h-lg-down  full-height bg-pattern bg-fHeight' style='background-image: url(/static/images/fheight1.jpg)'>
+                        <div class='col-lg-6 d-flex flex h-lg-down  full-height bg-pattern bg-fHeight' style="background-image: url('https://www.roboticsbusinessreview.com/wp-content/uploads/2018/04/Pixabay-network-concepts-1000x500.jpg');height:70%">
 
                         </div>
                         <div class='col-lg-3 col-md-5 col-sm-6 ml-auto flex d-flex mr-auto full-height pt-40 pb-20'>

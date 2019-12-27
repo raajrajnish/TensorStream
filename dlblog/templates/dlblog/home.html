@@ -65,16 +65,16 @@
 
 
                 <div class="row">
-                 {% for b in courses %}
+                 {% for c in courses %}
     		<div class="col-lg-4 d-flex align-items-stretch">
     		    <div class="card profile-card-5 polaroid">
-                    <a href="dlblog/{{ b.slug }}">
+                    <a href="courses/{{ c.slug }}">
                         <div class="card-img-block">
-    		            <img class="card-img-top" src="{{b.course_main_image.url}}" alt="Card image cap">
+    		            <img class="card-img-top" src="{{c.course_main_image.url}}" alt="Card image cap">
     		        </div>
                     <div class="card-body pt-0">
-                    <h5 class="card-title">{{b.course_title}}</h5>
-                        <h4>{{b.course_name}}</h4>
+                    <h5 class="card-title">{{c.course_title}}</h5>
+                        <h4>{{c.course_name}}</h4>
                         <hr>
                         <h6 class="text float-right" style="color:#ff6f00;">Go To Course >></h6>
 

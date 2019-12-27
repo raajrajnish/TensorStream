@@ -3,42 +3,33 @@
 <html lang="en">
     <head>
         <!-- Required meta tags -->
-
         <meta charset="utf-8">
-        {% load static %}
+        {% load staticfiles %}
         <link rel='icon' href="{% static 'images/fav.png' %}" type='image/x-icon'> </link>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>TensorStream : Learn Deep Learning,Computer Vision and NLP</title>
         <!-- Plugins CSS -->
         <link href="{% static 'css/plugins/plugins.css' %}" rel="stylesheet">
-
-        <link href="/static/linearicons/fonts.css" rel="stylesheet">
+        <link href="{% static 'linearicons/fonts.css' %}" rel="stylesheet">
         <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
         <!--<link href="/static/css/css_cards.css" rel="stylesheet">-->
         <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
         <link href="{% static 'fontawesome/css/all.css' %}" rel="stylesheet">
 
+        <style>
+                                .inner{
+                                    overflow: hidden;
+                                }
 
+                                .inner img{
+                                    transition: all 1.5s ease;
+                                }
 
-
-
-
-         <style>
-                .inner{
-                    overflow: hidden;
-                }
-
-                .inner img{
-                    transition: all 1.5s ease;
-                }
-
-                .inner:hover img{
-                    transform: scale(1.5);
-                }
-        </style>
-
-                        <style>
+                                .inner:hover img{
+                                    transform: scale(1.5);
+                                }
+                        </style>
+        <style>
                             div.polaroid {
                               width: 330px;
                               box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -49,58 +40,50 @@
                               padding: 0px;
                             }
                         </style>
-
-
         <style>
+                                .profile-card-5{
+                                    margin-top:20px;
+                                }
+                                .profile-card-5 .btn{
+                                    border-radius:2px;
+                                    text-transform:uppercase;
+                                    font-size:12px;
+                                    padding:7px 20px;
+                                }
+                                .profile-card-5 .card-img-block {
+                                    width: 91%;
+                                    margin: 0 auto;
+                                    position: relative;
+                                    top: -20px;
+
+                                }
+                                .profile-card-5 .card-img-block img{
+                                    border-radius:5px;
+                                    box-shadow:0 0 10px #4E5E30;
+                                    transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                                }
+
+                                .card-img-block:hover {
+                                  transform: scale(1.0);
+                                  transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                                  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
+                                }
 
 
+                                .profile-card-5 h5{
+                                    color:#00000;
+                                    font-weight:600;
+                                }
+                                .profile-card-5 p{
+                                    font-size:14px;
+                                    font-weight:300;
+                                }
+                                .profile-card-5 .btn-primary{
+                                    background-color:#00000;
+                                    border-color:#4E5E30;
 
-/*Profile Card 5*/
-.profile-card-5{
-    margin-top:20px;
-}
-.profile-card-5 .btn{
-    border-radius:2px;
-    text-transform:uppercase;
-    font-size:12px;
-    padding:7px 20px;
-}
-.profile-card-5 .card-img-block {
-    width: 91%;
-    margin: 0 auto;
-    position: relative;
-    top: -20px;
-
-}
-.profile-card-5 .card-img-block img{
-    border-radius:5px;
-    box-shadow:0 0 10px #4E5E30;
-    transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.card-img-block:hover {
-  transform: scale(1.0);
-  transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
-}
-
-
-.profile-card-5 h5{
-    color:#4E5E30;
-    font-weight:600;
-}
-.profile-card-5 p{
-    font-size:14px;
-    font-weight:300;
-}
-.profile-card-5 .btn-primary{
-    background-color:#00000;
-    border-color:#4E5E30;
-
-}
-        </style>
-
-
+                                }
+                        </style>
 
     </head>
 
@@ -122,18 +105,18 @@
 
                             {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link" data-scroll href="{% url 'userhome' %}" style="color:#ff6f00">User Home</a>
+                                <a class="nav-link" data-scroll href="{% url 'userhome' %}" style="color:#ff6f00"><strong>User Home</strong></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-scroll href="{% url 'blogs' %}" style="color:#ff6f00">Blogs</a>
+                                <a class="nav-link" data-scroll href="{% url 'blogs' %}" style="color:#ff6f00"><strong>Blogs</strong></a>
                             </li>
                              <li class="nav-item">
-                               <!-- <a class="nav-link" data-scroll href="#testimonials" style="color:#ff6f00">UseCase</a>-->
+                               <a class="nav-link" data-scroll href="#testimonials" style="color:#ff6f00"><strong>Courses</strong></a>
                             </li>
 
 
                             <li class="nav-item">
-                                <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}" onClick=" " style="color:#ff6f00"><span class="oi oi-account-logout"></span> Logout</a>
+                                <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}" onClick=" " style="color:#ff6f00"><span class="oi oi-account-logout"></span> <strong>Logout</strong></a>
                                    <form id="logout" method="POST" action="{% url 'logout' %}">
                                        {% csrf_token %}
                                        <input type="hidden"/>
@@ -142,13 +125,13 @@
 
                             {% else %}
                             <li class="nav-item">
-                                <a class="nav-link active" data-scroll href="{% url 'home' %}" style="color:#ff6f00">Home</a>
+                                <a class="nav-link active" data-scroll href="{% url 'home' %}" style="color:#ff6f00"><strong>Home</strong></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-scroll href="{% url 'blogs' %}">Blogs</a>
+                                <a class="nav-link" data-scroll href="{% url 'blogs' %}" style="color:#ff6f00"><strong>Blogs</strong></a>
                             </li>
                              <li class="nav-item">
-                                <a class="nav-link" data-scroll href="{% url 'signin' %}">Login</a>
+                                 <a class="nav-link" data-scroll href="{% url 'signin' %}" style="color:#ff6f00"><strong>Login</strong></a>
                             </li>
 
                             {% endif %}
@@ -171,7 +154,7 @@
 
                     </div>
                     <div class="col-lg-8 text-right">
-
+                        <!--
                         <div class="social-buttons">
                              <span>
 
@@ -188,7 +171,8 @@
                                     <i class="fab fa-skype"></i>
                                 </a>
                             </span>
-                        </div>
+                        </div> -->
+
                         <ul class="list-inline pb20">
                              <li class="list-inline-item">
                                 <a href="#" style="color:#ff6f00">Contact Here : info@tensorstream.org</a>

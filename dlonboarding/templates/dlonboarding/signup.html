@@ -7,13 +7,14 @@
  <body class='bg-white'>
 <hr>
         <div class="page-wrapper" id="page-wrapper">
-             <link href="/static/login/css/style.css" rel="stylesheet">
+            {% load staticfiles %}
+             <link href="{% static 'login/css/style.css' %}" rel="stylesheet">
 
             <main class="content">
 
                 <div class="container-fluid flex d-flex">
                     <div class='row flex align-items-center'>
-                        <div class='col-6 d-flex flex h-lg-down full-height bg-fHeight' style='background-image: url(images/fheight1.jpg)'>
+                        <div class='col-6 d-flex flex h-lg-down full-height bg-fHeight' style="background-image: url('https://www.blumeglobal.com/wp-content/uploads/2018/11/NLP-image.jpg');height:70%;">
 
                         </div>
                         <div class='col-lg-4 col-md-5 col-sm-6 d-flex flex ml-auto mr-auto full-height pt-40 pb-20'>
@@ -75,7 +76,7 @@
                                             </a>
                                         </li>-->
                                         <li>
-                                            <a href="javascript:void(0)" class="btn btn-social btn-border-o btn-icon btn-block  si-colored-g-plus mr-2 mb-2">
+                                            <a href="{% url 'social:begin' 'github' %}" class="btn btn-social btn-border-o btn-icon btn-block  si-colored-g-plus mr-2 mb-2">
                                                 <i class="fab fa-github"></i> Sign Up with Github
                                             </a>
                                         </li>

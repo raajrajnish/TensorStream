@@ -13,7 +13,7 @@ class offerings(models.Model):
     course_main_image = models.FileField(upload_to='blog/images/')
     course_title = models.CharField(max_length=200,null=True, blank=False)
     course_name = models.CharField(max_length=200,null=True, blank=False)
-    course_slug = models.SlugField(max_length=200,unique=True)
+    slug = models.SlugField(max_length=200,unique=True)
     course_created_on = models.DateTimeField(auto_now_add=True)
     course_status = models.IntegerField(choices=STATUS, default=0)
     course_author = models.ForeignKey(User,on_delete=models.CASCADE,related_name='course_post')
@@ -27,5 +27,5 @@ class offerings(models.Model):
         return self.course_title
 
     def get_absolute_url(self):
-        return reverse('blog_home', kwargs={'slug': self.course_slug})
+        return reverse('blog_home', kwargs={'slug': self.slug})
 
