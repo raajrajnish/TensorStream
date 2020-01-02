@@ -15,7 +15,7 @@
                             {% csrf_token %}
 
                             {{ form.media }}
-                            {{ form | crispy }}
+                            {{ form | crispy | safe }}
 
 
                           <br>

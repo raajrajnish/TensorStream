@@ -177,6 +177,33 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '39e2f82956dcff15b1bf3ba592066297'
 CKEDITOR_UPLOAD_PATH = "blog/uploads/"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+CKEDITOR_CONFIGS = { 'default':
+                         { 'toolbar': 'Custom', 'height': 1000,'width': 1070, 'toolbar_Custom':
+                             [
+                                 ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
+                                 ['Link', 'Unlink', 'Anchor'],
+                                 ['Image', 'Flash', 'Table', 'HorizontalRule'],
+                                 ['TextColor', 'BGColor'],
+                                 ['Smiley', 'SpecialChar'],
+                             ],
+                           }, 'special':
+
+                        {'toolbar': 'Custom', 'height': 650, 'width': 1070, 'toolbar_Custom':
+                            [
+                                ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo',
+                                 'Redo'],
+                                ['Link', 'Unlink', 'Anchor'],
+                                ['Image', 'Flash', 'Table', 'HorizontalRule'],
+                                ['TextColor', 'BGColor'],
+                                ['Smiley', 'SpecialChar'],
+                                ['CodeSnippet'],
+                                ['Youtube'],
+                            ],'extraPlugins':','.join(['codesnippet','youtube']),
+                         }
+                     }
+
+
+
 
 try:
     from .local_settings import *

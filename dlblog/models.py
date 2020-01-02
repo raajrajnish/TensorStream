@@ -23,7 +23,8 @@ class Blog(models.Model):
     author = models.ForeignKey(User,on_delete=models.CASCADE,related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
 
-    content = RichTextUploadingField()
+    content = RichTextUploadingField(config_name='special',external_plugin_resources=[
+        ('youtube','{% static "/youtube/" %}','plugin.js')])
 
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS,default=0)

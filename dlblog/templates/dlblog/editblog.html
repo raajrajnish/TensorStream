@@ -14,7 +14,7 @@
                       <form method ="POST" action="/dlblog/edit_blog/{{slug}}/" enctype="multipart/form-data">
                             {% csrf_token %}
                               {{form.media }}
-                              {{form | crispy}}
+                              {{form | crispy | safe}}
                           <br>
                             <input class="btn btn-primary" type="submit" value="Update Blog"/>
                         </form>

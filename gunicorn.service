@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name 159.65.147.96;
+    server_name 159.65.147.96 tensorstream.org www.tensorstream.org;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {

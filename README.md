@@ -104,10 +104,8 @@ sudo systemctl restart gunicorn
 2. sudo nginx -t && sudo systemctl restart nginx
 
 
-
-
-
-
+How to reset a password
+# python manage.py changepassword <user_name>
 
 
 
