@@ -101,7 +101,8 @@ Public Key
 Private Key
 
 
-
+1. Start virtual machine by goint to stream folder and
+    . bin/activate
 --------------------------------------------
 Everytime we make any changes to our django project file we need to
 1. restrat gunicorn
