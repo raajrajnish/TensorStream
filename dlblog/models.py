@@ -11,7 +11,7 @@ from django.utils import timezone
 STATUS = (
     (0,'Draft'),
     (1,'Publish')
-)
+);
 
 
 
@@ -24,7 +24,7 @@ class Blog(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     content = RichTextUploadingField(config_name='special',external_plugin_resources=[
-        ('youtube','{% static "/youtube/" %}','plugin.js')])
+        ('youtube','/static/youtube/','plugin.js')])
 
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS,default=0)
@@ -69,6 +69,7 @@ class Comment(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)
+
 
     def approve(self):
         self.approved_comment = True

@@ -1,206 +1,133 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        {% load staticfiles %}
-        <link rel='icon' href="{% static 'images/fav.png' %}" type='image/x-icon'> </link>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>TensorStream : Learn Deep Learning,Computer Vision and NLP</title>
-        <!-- Plugins CSS -->
-        <link href="{% static 'css/plugins/plugins.css' %}" rel="stylesheet">
-        <link href="{% static 'linearicons/fonts.css' %}" rel="stylesheet">
-        <link href="{% static 'css/style.css' %}" rel="stylesheet">
-        <!--<link href="/static/css/css_cards.css" rel="stylesheet">-->
-        <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
-        <link href="{% static 'fontawesome/css/all.css' %}" rel="stylesheet">
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script src="/static/base/js/main.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+<head>
+  <title>Tensorstream &mdash; Learn deep learning by doig deep learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=B612+Mono|Cabin:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+  <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+  <link href="{% static 'css/jquery.mb.YTPlayer.min.css' %}" media="all" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
 
-        <style>
-                                .inner{
-                                    overflow: hidden;
-                                }
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  <div class="site-wrap">
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+      <div class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block" role="banner">
 
-                                .inner img{
-                                    transition: all 1.5s ease;
-                                }
+      <div class="container">
+        <div class="d-flex align-items-center">
 
-                                .inner:hover img{
-                                    transform: scale(1.5);
-                                }
-                        </style>
-        <style>
-                            div.polaroid {
-                              width: 330px;
-                              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                              text-align: left;
-                            }
+          <div class="mr-auto">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
+                <li>
+                  <a href="{% url 'home' %}" class="nav-link text-left">[ ] TensorStream</a>
+                </li>
+              </ul>
+            </nav>
 
-                            div.container {
-                              padding: 0px;
-                            }
-                        </style>
-        <style>
-                                .profile-card-5{
-                                    margin-top:20px;
-                                }
-                                .profile-card-5 .btn{
-                                    border-radius:2px;
-                                    text-transform:uppercase;
-                                    font-size:12px;
-                                    padding:7px 20px;
-                                }
-                                .profile-card-5 .card-img-block {
-                                    width: 91%;
-                                    margin: 0 auto;
-                                    position: relative;
-                                    top: -20px;
-
-                                }
-                                .profile-card-5 .card-img-block img{
-                                    border-radius:5px;
-                                    box-shadow:0 0 10px #4E5E30;
-                                    transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                                }
-
-                                .card-img-block:hover {
-                                  transform: scale(1.0);
-                                  transition: 0.5s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                                  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
-                                }
-
-
-                                .profile-card-5 h5{
-                                    color:#00000;
-                                    font-weight:600;
-                                }
-                                .profile-card-5 p{
-                                    font-size:14px;
-                                    font-weight:300;
-                                }
-                                .profile-card-5 .btn-primary{
-                                    background-color:#00000;
-                                    border-color:#4E5E30;
-
-                                }
-                        </style>
-
-    </head>
-
-    <body data-spy="scroll" data-target="#landingkit-navbar" data-offset="74">
-        <div id="preloader">
-            <div id="preloader-inner"></div>
-        </div><!--/preloader-->
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-faded navbar-sticky navbar-transparent">
-                <div class="container">
-
-                    <a class="navbar-brand" href="{% url 'home' %}">
-
-                        <h6 style="font-family:Gotham;font-size:34px;color:#00000">[<span style="color:#ff6f00"> ]</span> Tensor<span style="color:#ff6f00">Stream</span></h6>
-                    </a>
-
-                    <div class="collapse navbar-collapse" id="navbarlanding">
-                        <ul class="navbar-nav ml-auto">
-
-                            {% if user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link" data-scroll href="{% url 'userhome' %}" style="color:#ff6f00"><strong>User Home</strong></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-scroll href="{% url 'blogs' %}" style="color:#ff6f00"><strong>Blogs</strong></a>
-                            </li>
-                             <li class="nav-item">
-                               <a class="nav-link" data-scroll href="#testimonials" style="color:#ff6f00"><strong>Courses</strong></a>
-                            </li>
-
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}" onClick=" " style="color:#ff6f00"><span class="oi oi-account-logout"></span> <strong>Logout</strong></a>
-                                   <form id="logout" method="POST" action="{% url 'logout' %}">
+          </div>
+            <div class="ml-auto">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
+                {% if user.is_authenticated %}
+                <li>
+                  <a href="{% url 'blogs' %}" class="nav-link text-left">Blogs</a>
+                </li>
+                <li>
+                  <a href="{% url 'blogs' %}" class="nav-link text-left">Tools</a>
+                </li>
+                  <li>
+                  <a href="{% url 'userhome' %}" class="nav-link text-left">MyWorks</a>
+                </li>
+                <li>
+                  <a href="javascript:{document.getElementById('logout').submit()}" onClick=" " class="nav-link text-left">Logout</a>
+                    <form id="logout" method="POST" action="{% url 'logout' %}">
                                        {% csrf_token %}
                                        <input type="hidden"/>
                                    </form>
-                            </li>
+                </li>
+                  {% else %}
+                  <li>
+                  <a href="{% url 'blogs' %}" class="nav-link text-left">Blogs</a>
+                </li>
+                <li>
+                  <a href="{% url 'blogs' %}" class="nav-link text-left">Tools</a>
+                </li>
+                <li>
+                  <a href="{% url 'signin' %}" class="nav-link text-left">Login</a>
+                </li>
+                  {% endif %}
+              </ul>
+            </nav>
 
-                            {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link active" data-scroll href="{% url 'home' %}" style="color:#ff6f00"><strong>Home</strong></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-scroll href="{% url 'blogs' %}" style="color:#ff6f00"><strong>Blogs</strong></a>
-                            </li>
-                             <li class="nav-item">
-                                 <a class="nav-link" data-scroll href="{% url 'signin' %}" style="color:#ff6f00"><strong>Login</strong></a>
-                            </li>
+          </div>
 
-                            {% endif %}
-                        </ul>
+        </div>
+      </div>
 
-                    </div>
-                </div>
-            </nav><!--navbar-->
+    </div>
+    </div>
 
-        {% block content %}
-        {% endblock%}
+      {% block content %}
+      {% endblock%}
 
-        <footer class="footer">
-            <div class="container">
-
-                <div class="row align-items-end">
-                    <div class="col-lg-4">
-                        <h5></h5>
-
-
-                    </div>
-                    <div class="col-lg-8 text-right">
-                        <!--
-                        <div class="social-buttons">
-                             <span>
-
-                                <a href="#" class="social-icon si-dark si-twitter si-dark-round">
-                                    <i class="fab fa-twitter-square"></i>
-                                    <i class="fab fa-twitter-square"></i>
-                                </a>
-                                <a href="#" class="social-icon si-dark si-g-plus si-dark-round">
-                                    <i class="fab fa-google"></i>
-                                    <i class="fab fa-google"></i>
-                                </a>
-                                <a href="#" class="social-icon si-dark si-skype si-dark-round">
-                                    <i class="fab fa-skype"></i>
-                                    <i class="fab fa-skype"></i>
-                                </a>
-                            </span>
-                        </div> -->
-
-                        <ul class="list-inline pb20">
-                             <li class="list-inline-item">
-                                <a href="#" style="color:#ff6f00">Contact Here : info@tensorstream.org</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" style="color:#ff6f00">About us</a>
-                            </li>
-                            <li class="list-inline-item" style="color:#ff6f00">
-                                <a href="http://tensorstream.org/" style="color:#ff6f00">tensorstream.org</a> &copy; Copyright 2019-2020.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="copyright">
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
             </div>
-        </footer>
-        <!--back to top
-        <a href="#" class="back-to-top" id="back-to-top"><i class="icon-chevron-up"></i></a>-->
-        <!-- jQuery first, then Tether, then Bootstrap JS. -->
-        <script type="text/javascript" src="{% static 'js/plugins/plugins.js' %}"></script>
-        <!--tweet-scroller
-        <script src="/static/tweetie/tweetie.min.js" type="text/javascript"></script>-->
-        <script type="text/javascript" src="{% static 'js/landing.custom.js' %}"></script>
-        <!-- Custom scripts for this template
-        <script src="js/clean-blog.min.js"></script> -->
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+  <!-- .site-wrap -->
 
-    </body>
+
+  <!-- loader -->
+  <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#ff5e15"/></svg></div>
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'js/jquery.sticky.js' %}"></script>
+  <script src="{% static 'js/jquery.mb.YTPlayer.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
 </html>

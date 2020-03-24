@@ -20,7 +20,7 @@
         Step 1 : We can go with default sqllite db or
         Step 2 : configure DB -postgres
                     **sudo su postgres**
-                    **enter password**
+                    **enter password - your computer password**
                     **enter psql**
                     postgres started
 
@@ -94,6 +94,11 @@ download the folder and put it into project static folder as we have added a new
 we need to call
 
 python manage.py collectstatic
+
+---------------------------
+Public Key
+
+Private Key
 
 
 

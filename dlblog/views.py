@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .models import Blog,UseCase
+from .models import Blog,UseCase,Comment
 from courses.models import offerings
 from django.contrib.auth.models import User
 from django.contrib import auth
@@ -113,4 +113,5 @@ def edit_blog(request,slug):
 
 def blog_home(request,slug):
     blog = get_object_or_404(Blog, slug=slug)
+
     return render(request,'dlblog/blog_home.html',{'blog': blog})

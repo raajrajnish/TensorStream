@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Blog
+from .models import Blog,Comment
 
 
 
@@ -10,3 +10,8 @@ class addMainContent(ModelForm):
         fields = ('blog_main_image', 'title', 'summary', 'content')
 
 
+class CommentForm(ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('author', 'text',)

@@ -29,31 +29,65 @@
 
                         <div class="container">
                         <article>
-                          <div class="row">
-                            <div class="col-lg-8 col-md-10 mx-auto">
-                              <br>
-                                <h2>Comments</h2>
-                                <hr>
+                         <div>
+                             <span class='font600 fs16 text'>Post Comment</span>
+                             <hr>
+                                 <form role="form" method ="POST" action="signup" enctype="multipart/form-data">
+                                        {% csrf_token %}
 
-                                <input type="text" name="comment" class="form-control" placeholder="Enter your comment" required="">
-                                <hr>
-                                 <a data-scroll href="#" class="btn btn-black-outline mr-1">Add Comment</a>
+                                      <div class="input-icon-group">
+                                            <div class='input-icon-append'>
+                                                <input id="us1" name="name" placeholder="name" type="text" class="form-control" required="">
+                                            </div>
+                                        </div>
+                                     <hr>
+                                     <div class="input-icon-group">
+                                            <div class='input-icon-append'>
+                                                <input id="us2" name="name" placeholder="email" type="text" class="form-control" required="">
+                                            </div>
+                                        </div>
+                                     <hr>
+                                    <div class="input-icon-group">
+                                            <div class='input-icon-append'>
+                                                <textarea id="cn-pass" name="comment" placeholder="comment" type="password" class="form-control" required="" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                     <hr>
 
-
-
-                                <h5 class="meta" style="color: #ff6f00">Posted by <strong style="color: #000000">{{ blog.author }}</strong>
-                                    on <strong style="color: #000000">{{ blog.created_on}}</strong> </h5>
-
+                                        <button type="submit" class="btn btn-gradient-primary btn-block btn-lg">Post Comment</button>
+                                </form>
                             </div>
-                          </div>
+
+                        </article>
+                      </div>
+              </div>
+
+              <div class="album py-5 bg-light">
+
+                        <div class="container">
+                        <article>
+
+                         <div>
+                             <span class='font600 fs16 text'>Old Comments</span>
+                             <hr>
+                             {% for comment in comment %}
+                             <div>
+                                 <h5>{{ comment.text|linebreaks }}</h5>
+                                 <div class="date">{{ comment.created_date }}</div>
+                                 <h6>Posted By : {{ comment.author }}</h6>
+                             </div>
+                             {% empty %}
+                                <p>No comments here yet :(</p>
+                             {% endfor %}
+                             <hr>
+                            </div>
+
                         </article>
                       </div>
               </div>
 
 
           </main>
-
-
 
 
 

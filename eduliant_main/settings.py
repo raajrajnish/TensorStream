@@ -51,8 +51,6 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'social_django',
     'crispy_forms',
-
-
 ]
 
 MIDDLEWARE = [
@@ -201,8 +199,6 @@ CKEDITOR_CONFIGS = { 'default':
                             ],'extraPlugins':','.join(['codesnippet','youtube']),
                          }
                      }
-
-
 
 
 try:
