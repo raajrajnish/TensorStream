@@ -114,7 +114,10 @@ How to reset a password
 # python manage.py changepassword <user_name>
 
 
+# how to kill a port
 
+sudo lsof -t -i:8080
+sudo kill -9 <PID>
 
 
 
