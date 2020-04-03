@@ -17,8 +17,10 @@
                                 <h5>{{blog.summary}}</h5>
 
                                 <h5 class="meta" style="color: #ff6f00">Posted by <strong style="color: #000000">{{ blog.author }}</strong>
-                                    on <strong style="color: #000000">{{ blog.created_on}}</strong> </h5>
+                                    on <strong style="color: #000000">{{ blog.created_on }}</strong> </h5>
+                                <hr>
                               {{ blog.content | safe }}
+                                <hr>
                             </div>
                           </div>
                         </article>
@@ -30,14 +32,14 @@
                         <div class="container">
                         <article>
                          <div>
-                             <span class='font600 fs16 text'>Post Comment</span>
+                             <span class='font600 fs16 text' style="color: #ff6f00">Post Comment</span>
                              <hr>
-                                 <form role="form" method ="POST" action="signup" enctype="multipart/form-data">
+                                 <form role="form" method ="POST" action="signup" enctype="multipart/form-data" >
                                         {% csrf_token %}
 
-                                      <div class="input-icon-group">
-                                            <div class='input-icon-append'>
-                                                <input id="us1" name="name" placeholder="name" type="text" class="form-control" required="">
+                                      <div class="input-icon-group" >
+                                            <div class='input-icon-append' >
+                                                <input id="us1" name="name" placeholder="name" type="text" class="form-control" required="" >
                                             </div>
                                         </div>
                                      <hr>
@@ -68,7 +70,7 @@
                         <article>
 
                          <div>
-                             <span class='font600 fs16 text'>Old Comments</span>
+                             <span class='font600 fs16 text' style="color: #ff6f00">Old Comments</span>
                              <hr>
                              {% for comment in comment %}
                              <div>

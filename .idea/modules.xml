@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/TensorTrade.iml" filepath="$PROJECT_DIR$/.idea/TensorTrade.iml" />
       <module fileurl="file://$PROJECT_DIR$/../article_to_summary/.idea/article_to_summary.iml" filepath="$PROJECT_DIR$/../article_to_summary/.idea/article_to_summary.iml" />
       <module fileurl="file://$PROJECT_DIR$/../jdcv/.idea/jdcv.iml" filepath="$PROJECT_DIR$/../jdcv/.idea/jdcv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mflix-python/.idea/mflix-python.iml" filepath="$PROJECT_DIR$/../mflix-python/.idea/mflix-python.iml" />
     </modules>
   </component>
 </project>

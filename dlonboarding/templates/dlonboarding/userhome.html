@@ -3,240 +3,77 @@
 {% block content %}
 
 
-<main class="main-content" >
+    <div class="site-section">
 
-<!--fonts-->
-        <link href="/static/admin/lib/line-icons/line-icons.css" rel="stylesheet">
-        <link href="/static/admin/lib/font-awesome/css/fontawesome-all.min.css" rel="stylesheet">
-        <link href="/static/admin/lib/chartist/chartist.min.css" rel="stylesheet" />
-        <link href="/static/admin/css/chartist-custom.css" rel="stylesheet" />
-        <!-- jvectormap -->
-        <link href="/static/admin/lib/vector-map/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
-        <link href="/static/admin/css/style.css" rel="stylesheet">
+      <div class="container">
 
-        <div class="page-wrapper" id="page-wrapper">
-            <aside id="page-aside" class=" page-aside aside-fixed">
-                <div class="sidenav darkNav">
-                    <a href="#" class="app-logo d-flex flex flex-row align-items-center overflow-hidden justify-content-center">
+           <div class="col-xl-3 col-lg-4 col-md-6">
+               <!--<script> document.write(new Date()); </script>-->
+               <div class="list-title fs-2x">
+                   <h3>Welcome <strong>{{user}}</strong></h3>
 
-                    </a>
-                    <div class="flex">
-                        <div class="aside-content slim-scroll">
-                            <ul class="metisMenu" id="metisMenu">
-                                <li> <i class="icon-Files nav-thumbnail"></i>
-                                    <a class="has-arrow" href="javascript:void(0)">
-
-                                        <span class="nav-text">
-                                            Pages
-                                        </span>
-                                    </a>
-                                    <ul aria-expanded="false">
-                                        <li>
-                                            <span class="nav-thumbnail">Si</span>
-                                            <a href="page-sign-in.html">Sign In</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">Si2</span>
-                                            <a href="page-sign-in-2.html">Sign In 2</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">Su</span>
-                                            <a href="page-sign-up.html">Sign Up</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">Su2</span>
-                                            <a href="page-sign-up-2.html">Sign Up 2</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">Lk</span>
-                                            <a href="page-lockscreen.html">Lock Screen</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">Pw</span>
-                                            <a href="page-re-password.html">Recover Password</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">Sc</span>
-                                            <a href="page-success.html">Success Pages</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">Bl</span>
-                                            <a href="page-blank.html">Blank</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">Er</span>
-                                            <a href="page-404.html">Error 404</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">Cmg</span>
-                                            <a href="page-coming-soon.html">Coming Soon</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">Gl</span>
-                                            <a href="page-gallery.html">Gallery</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">Tm</span>
-                                            <a href="page-timeline.html">Timeline</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">In</span>
-                                            <a href="page-invoice.html">Invoice</a>
-                                        </li>
-                                        <li>
-                                            <span class="nav-thumbnail">In</span>
-                                            <a href="page-pricing.html">Pricing Tables</a>
-                                        </li>
-                                    </ul>
-                                </li><!--Menu-item-->
-                            </ul>
-                        </div><!-- aside content end-->
-                    </div><!-- aside hidden scroll end-->
-                    <div class="aside-footer p-3 pl-25">
-                        <div class="">
-                            App Version - 1.0
-                        </div>
-                    </div><!-- aside footer end-->
-                </div><!-- sidenav end-->
-            </aside><!-- page-aside end-->
-            <main class="content">
-                <header class="navbar page-header whiteHeader navbar-expand-lg">
-                </header>
-                <div class="page-subheader mb-30">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="col-md-7">
-                                <div class="list">
-                                    <div class="list-item pl-0">
-
-                                        <div class="list-body">
-                                            <div class="list-title fs-2x">
-                                                <h3>Welcome <strong>{{user}}</strong></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5 d-flex justify-content-end h-md-down">
-                                <div class="container">
-                                    <!--<h6>Date : <script> document.write(new Date().toLocaleDateString()); </script></h6>-->
-                                    <p><script> document.write(new Date()); </script></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- page-sub-Header end-->
-                <div class="container"> <h4>Quick Options</h4></div>
-
-                <div class="page-content d-flex flex">
-                    <div class="container">
-
-                        <div class="row">
-                            <div class="col-xl-3 col-lg-4 col-md-6">
-                                 <div class="buttons">
-                                            <br>
-                                            <a href="{% url 'create' %}"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fas fa-plus"></i></i>New Blog</a>
-                                            </div>
-                            </div><!--col-->
-                            <div class="col-xl-3 col-lg-4 col-md-6">
-                                <!--<div class="buttons">
-                                            <br>
-                                            <a href="{% url 'create' %}"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fas fa-plus"></i></i>New Use Case</a>
-                                            </div>-->
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
-                                <div class="list bg-white shadow-sm rounded">
-                                    <div class="list-item">
-                                        <div class="list-thumb avatar bg-danger text-white rounded avatar40">
-                                            <i class="fa fa-user-circle"></i>
-                                        </div>
-                                        <div class="list-body text-right">
-                                            <span class="list-title fs-1x">3386</span>
-                                            <span class="list-content">New Visitors
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!--col-->
-                            <div class="col-xl-3 col-lg-4 col-md-6">
-                                <div class="list bg-white shadow-sm rounded mb-30">
-                                    <div class="list-item">
-                                        <div class="list-thumb avatar bg-success text-white rounded avatar40">
-                                            <i class="fa fa-dollar-sign"></i>
-                                        </div>
-                                        <div class="list-body text-right">
-                                            <span class="list-title fs-1x">6,959</span>
-                                            <span class="list-content">Earnings
-
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!--col-->
-                        </div>
-                    </div>
-
+               </div>
+            <div class="container">
+                <div class="buttons">
+                    <br>
+                    <a href="{% url 'create' %}"  data-scroll="" class="btn btn-primary btn-rounded"><i class="fas fa-plus"></i></i>New Blog</a>
                 </div>
 
+           </div><!--col-->
+           </div>
 
-                <div class="container-fluid">
-                    <hr>
-                    <div class="container"> <h4>My Contributions</h4></div>
-                 <div class="row">
-                     {% for cub in currentuserblogs %}
-                         <div class="col-lg-3 col-md-6 mb-30 polaroid">
-                                <div class="iCard border1 p-2 rounded bg-light ">
-                                    <a href="/dlblog/{{ cub.slug }}">
-                                        <img src="{{cub.blog_main_image.url}}" alt="" class="img-fluid rounded">
-                                    </a>
-                                    <div class="iCard-content p-1 pt-15 pb-15">
-                                        <h3 class="fs16 text-dark font400 mb-5 text-capitalize">{{ cub.title }}</h3>
-                                        <span class="iCard-meta fs12 text-muted d-block mb-15">Posted on <strong class="font600">{{ cub.created_on }}</strong> </span>
-                                        <div class="thumbnails-group mb-15">
-                                            {{ cub.summary }} </div>
-                                        <div class="pt-15 b-t text-right">
-
-                                            <div class="row align-items-center">
-                                                <div class="col-5 text-left b-r">
-                                                    {% if cub.status == 0 %}
-                                                        <span class="d-block pb-1 fs13">Status : Draft</span>
-                                                    {% else %}
-                                                        <span class="d-block pb-1 fs13">Status : Published</span>
-                                                    {% endif %}
-                                                </div>
-                                                <div class="col-6">
-                                                    <a href="/dlblog/edit_blog/{{ cub.slug }}" class="btn btn-gradient-danger btn-icon btn-icon-right btn-sm">
-                                                        <i class="fa fa-arrow-right"></i>
+        <div class="row">
+          <div class="col-lg-6">
+              <br>
+            <div class="section-title">
+              <h2>Unpublished Blogs</h2>
+            </div>
+              {% for b in currentuserblogs %}
+              {% if b.status == 0 %}
+            <div class="post-entry-2 d-flex">
+              <div class="thumbnail" style="background-image: url({{b.blog_main_image.url}})"></div>
+              <div class="contents">
+                <h2><a href="dlblog/{{ b.slug }}">{{b.title}}</a></h2>
+                <p class="mb-3">{{b.summary}}</p>
+                <div class="post-meta">
+                    <div class="col-6">
+                        <a href="/dlblog/edit_blog/{{ b.slug }}" class="btn btn-gradient-danger btn-icon btn-icon-right btn-sm">
+                            <i class="fa fa-arrow-right"></i>
                                                         Edit Blog
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                     {% endfor %}
-                 </div>
+                        </a>
                     </div>
-
-
-
-            </main><!-- page content end-->
-        </div><!-- app's main wrapper end -->
-        <!-- Common plugins -->
-        <script type="text/javascript" src="/static/admin/js/plugins/plugins.js"></script>
-        <script type="text/javascript" src="/static/admin/js/appUi-custom.js"></script>
-        <script type="text/javascript" src="/static/admin/lib/chartjs/dist/chart.min.js"></script>
-        <script type="text/javascript" src="/static/admin/lib/peity/jquery.peity.min.js"></script>
-        <script src="/static/admin/lib/chartist/chartist.min.js"></script>
-        <script src="/static/admin/lib/chartist/chartist-tooltip.js"></script>
-        <!-- jvectormap -->
-        <script src="/static/admin/lib/vector-map/jquery-jvectormap-2.0.2.min.js"></script>
-        <script src="/static/admin/lib/vector-map/jquery-jvectormap-world-mill-en.js"></script>
-       <script type="text/javascript" src="/static/admin/js/dashboard.custom.js"></script>
-    </main>
-
+                </div>
+              </div>
+            </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="col-lg-6">
+            <div class="section-title">
+              <h2>Published Blogs</h2>
+            </div>
+            {% for b in currentuserblogs %}
+              {% if b.status == 1 %}
+            <div class="post-entry-2 d-flex">
+              <div class="thumbnail" style="background-image: url({{b.blog_main_image.url}})"></div>
+              <div class="contents">
+                <h2><a href="blog-single.html">{{b.title}}</a></h2>
+                <div class="post-meta">
+                    <div class="col-6">
+                        <a href="/dlblog/edit_blog/{{ b.slug }}" class="btn btn-gradient-danger btn-icon btn-icon-right btn-sm">
+                            <i class="fa fa-arrow-right"></i>
+                                                        Edit Blog
+                        </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 {% endblock %}
