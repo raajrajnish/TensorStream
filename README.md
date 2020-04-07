@@ -109,6 +109,9 @@ Everytime we make any changes to our django project file we need to
 sudo systemctl restart gunicorn
 2. sudo nginx -t && sudo systemctl restart nginx
 
+# also after pull activate env and run
+
+python manage.py collectstatic
 
 How to reset a password
 # python manage.py changepassword <user_name>
