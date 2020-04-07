@@ -30,10 +30,10 @@
             </div>
               {% for b in currentuserblogs %}
               {% if b.status == 0 %}
-            <div class="post-entry-2 d-flex">
-              <div class="thumbnail" style="background-image: url({{b.blog_main_image.url}})"></div>
+            <a class="post-entry-2 d-flex">
+                <a href="/dlblog/{{ b.slug }}"><div class="thumbnail" style="background-image: url({{b.blog_main_image.url}})"></div></a>
               <div class="contents">
-                <h2><a href="dlblog/{{ b.slug }}">{{b.title}}</a></h2>
+                <h2><a href="/dlblog/{{ b.slug }}">{{b.title}}</a></h2>
                 <p class="mb-3">{{b.summary}}</p>
                 <div class="post-meta">
                     <div class="col-6">

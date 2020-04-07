@@ -77,6 +77,19 @@ def create(request):
 
 '''
 
+def add_comment(request):
+    if request.method == "POST":
+        form = addMainContent(request.POST,request.FILES)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.author =  request.user
+            instance.slug = slugify(request.POST['title'])
+            instance.save()
+            return redirect('/dlblog/'+instance.slug)
+    else:
+        form = addMainContent()
+    return render(request, 'dlblog/blog_home.html',{'form':form})
+
 @login_required
 def create(request):
     if request.method == "POST":

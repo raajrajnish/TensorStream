@@ -10,7 +10,7 @@
 	width: 100%;
 	background: $white;
 
-	font-family: "B612 Mono", monospace;
+	font-family: Arial, Helvetica, sans-serif;
 	.site-navigation {
 		&.border-bottom {
 			border-bottom: 1px solid lighten($gray-1, 80%)!important;
@@ -64,7 +64,7 @@
 						top: 50%;
 						right: 0;
 						transform: translateY(-50%);
-						font-family: 'icomoon';
+						font-family: Arial, Helvetica, sans-serif;
 					}
 				}
 				.dropdown {
@@ -293,7 +293,8 @@
 			&:before {
 				font-size: 12px;
 				z-index: 20;
-				font-family: "icomoon";
+				font-family: Arial, Helvetica, sans-serif;
+
 				content: "\f078";
 				position: absolute;
 				top: 50%;

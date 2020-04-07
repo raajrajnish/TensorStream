@@ -13,11 +13,11 @@
                           <div class="row">
                             <div class="col-lg-8 col-md-10 mx-auto">
                               <br>
-                                <h3 style="color:#fb5f04;">{{blog.title}}</h3>
-                                <br>
+                                <h2 style="color:#fb5f04;">{{blog.title}}</h2>
+
                                 <h5>{{blog.summary}}</h5>
-                                <h5 class="meta" style="color: #ff6f00">Posted by <strong style="color: #000000">{{ blog.author }}</strong>
-                                    on <strong style="color: #000000">{{ blog.created_on }}</strong> </h5>
+                                <h6 class="meta" style="color: #ff6f00">Posted by <strong style="color: #000000">{{ blog.author }}</strong>
+                                    on <strong style="color: #000000">{{ blog.created_on }}</strong> </h6>
                                 <hr>
                               {{ blog.content | safe }}
                                 <hr>
@@ -35,7 +35,7 @@
                          <div>
                              <span class='font600 fs16 text' style="color: #ff6f00">Post Comment</span>
                              <hr>
-                                 <form role="form" method ="POST" action="signup" enctype="multipart/form-data" >
+                                 <form role="form" method ="POST" action="add_comment" enctype="multipart/form-data" >
                                         {% csrf_token %}
 
                                       <div class="input-icon-group" >
